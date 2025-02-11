@@ -1,0 +1,9 @@
+$font-family: 'calibri', sans-serif;
+$nav-bar-color: #333;
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
