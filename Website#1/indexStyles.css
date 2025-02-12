@@ -127,4 +127,80 @@ body .container .body-item .item-content {
   text-align: center;
   font-size: 1rem;
   margin-top: 0.5rem;
+}
+html .form,
+body .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30rem;
+  height: 20rem;
+  background: #444444;
+  border: 1px solid #333333;
+  border-radius: 1rem;
+  position: fixed;
+  margin: 5rem;
+  border-bottom: 1px solid #333333;
+  box-shadow: 1px 1px 1rem #000000;
+}
+html .form .form-close-button,
+body .form .form-close-button {
+  width: 2rem;
+  height: 2rem;
+  background: #571919;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+html .form .form-title,
+body .form .form-title {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  height: 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  letter-spacing: 0.25rem;
+}
+html .form form,
+body .form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-basis: 80%;
+}
+html .form form .form-input,
+body .form form .form-input {
+  width: 80%;
+  height: 2rem;
+  margin-top: 1rem;
+  background: #333333;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+html .form form .form-button,
+body .form form .form-button {
+  width: 80%;
+  height: 2rem;
+  margin-top: 1rem;
+  background: #571919;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+  cursor: pointer;
 }/*# sourceMappingURL=indexStyles.css.map */
