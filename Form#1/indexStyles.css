@@ -1,0 +1,108 @@
+.chewy-regular {
+  font-family: "Chewy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+}
+html .container,
+body .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: brown;
+  width: 60vw;
+  height: 70vh;
+  border-radius: 1rem;
+  display: flex;
+  border: 0.25rem solid #11271b;
+  box-shadow: 1px 1px 0.5rem black;
+  overflow: hidden;
+}
+html .container .leftsubcontainer,
+body .container .leftsubcontainer {
+  background-color: #4c956c;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+html .container .leftsubcontainer .motto,
+body .container .leftsubcontainer .motto {
+  font-size: 2rem;
+  font-family: "Chewy";
+  color: #11271b;
+  text-align: center;
+  width: 80%;
+}
+html .container .rightsubcontainer,
+body .container .rightsubcontainer {
+  background-color: #fefee3;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+html .container .rightsubcontainer .title,
+body .container .rightsubcontainer .title {
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-family: "Chewy";
+  color: #d68c45;
+  text-align: center;
+  height: 10%;
+  display: flex;
+}
+html .container .rightsubcontainer .form,
+body .container .rightsubcontainer .form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  font-family: "Chewy";
+}
+html .container .rightsubcontainer .form h1,
+body .container .rightsubcontainer .form h1 {
+  width: 15rem;
+  text-align: center;
+}
+html .container .rightsubcontainer .form input,
+body .container .rightsubcontainer .form input {
+  width: 80%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 0.5rem solid #11271b;
+  border: none;
+  padding: 0.5rem;
+  font-family: "Chewy";
+  border: 1px solid #11271b;
+}
+html .container .rightsubcontainer .form .button,
+body .container .rightsubcontainer .form .button {
+  width: 60%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-family: "Chewy";
+  background-color: #11271b;
+  color: #d68c45;
+  font-size: 1rem;
+  cursor: pointer;
+}/*# sourceMappingURL=indexStyles.css.map */

@@ -1,0 +1,105 @@
+@import "_library.scss";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: grey;
+
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: brown;
+        width: 60vw;
+        height: 70vh;
+        border-radius: 1rem;
+        display: flex;
+        border: .25rem solid $theme-dark-text;
+        box-shadow: 1px 1px 0.5rem black;
+        overflow: hidden;
+
+        .leftsubcontainer{
+            background-color: $theme-dark;
+            width: 40%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .motto{
+                font-size: 2rem;
+                font-family: $text-font;
+                color: $theme-dark-text;
+                text-align: center;
+                width: 80%;
+            }
+        }
+
+        .rightsubcontainer{
+            background-color: $theme-light;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .title{
+                margin-top: 4rem;
+                font-size: 3rem;
+                font-family: $text-font;
+                color: $theme-light-text;
+                text-align: center;
+                height: 10%;
+                display: flex;
+            }
+
+            .form{
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                gap: 1rem;
+                font-family:  $text-font;
+
+                h1{
+                    width: 15rem;
+                    text-align: center;
+                }
+                
+                input{
+                    width: 80%;
+                    height: 2rem;
+                    border-radius: 0.5rem;
+                    border: 0.5rem solid $theme-dark-text;
+                    border: none;
+                    padding: 0.5rem;
+                    font-family:  $text-font;   
+                    border:1px solid $theme-dark-text;
+                }
+
+                .button{
+                    width: 60%;
+                    height: 2rem;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    font-family:  $text-font;
+                    background-color: $theme-dark-text;
+                    color: $theme-light-text;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+ 
+}
