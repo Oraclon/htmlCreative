@@ -51,11 +51,13 @@ body .itemContainer .item {
   overflow: hidden;
   transition: all 0.3s;
   font-family: "Libre Baskerville";
+  display: flex;
+  flex-direction: column;
 }
 html .itemContainer .item .itemImage,
 body .itemContainer .item .itemImage {
   width: 100%;
-  height: 70%;
+  height: 60%;
   background: brown;
   border-bottom: 1px solid black;
   position: relative;
@@ -80,22 +82,23 @@ body .itemContainer .item .itemTitle {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 html .itemContainer .item .itemDescription,
 body .itemContainer .item .itemDescription {
   width: 100%;
-  height: 10%;
+  height: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  align-content: center;
+  text-align: center;
   font-size: 0.8rem;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
 }
 html .itemContainer .item .itemPrice,
 body .itemContainer .item .itemPrice {
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 10%;
   display: flex;
   justify-content: center;
@@ -103,13 +106,121 @@ body .itemContainer .item .itemPrice {
   font-size: 1.2rem;
   display: flex;
   justify-content: flex-start;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   letter-spacing: 0.1rem;
-  margin-left: 0.3rem;
+  margin-left: 0.5rem;
 }
 html .itemContainer .item:hover,
 body .itemContainer .item:hover {
   box-shadow: 1px 1px 2rem black;
   transition: all 0.3s;
+}
+html .itemModal,
+body .itemModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(238, 238, 238);
+  z-index: 999;
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-family: "Libre Baskerville";
+}
+html .itemModal .modalImage,
+body .itemModal .modalImage {
+  width: 100%;
+  height: 60%;
+  background: brown;
+  border-bottom: 1px solid black;
+}
+html .itemModal .modalImage .modalClose,
+body .itemModal .modalImage .modalClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+html .itemModal .modalImage .modalHeart,
+body .itemModal .modalImage .modalHeart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  margin-top: 2.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+html .itemModal .modalTitle,
+body .itemModal .modalTitle {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+html .itemModal .modalDescription,
+body .itemModal .modalDescription {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+html .itemModal .modalPriceContainer,
+body .itemModal .modalPriceContainer {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+html .itemModal .modalPriceContainer .modalPrice,
+body .itemModal .modalPriceContainer .modalPrice {
+  width: 25%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+html .itemModal .modalPriceContainer button,
+body .itemModal .modalPriceContainer button {
+  background: rgb(146, 146, 146);
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }/*# sourceMappingURL=indexStyles.css.map */

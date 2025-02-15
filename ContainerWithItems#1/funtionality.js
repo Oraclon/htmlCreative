@@ -1,3 +1,5 @@
+
+//#region Data
 const products = [
     {
         title: "Gaming Laptop",
@@ -50,24 +52,23 @@ const products = [
         price: "99.99$"
     }
 ];
+//#endregion
 
-
-CreateDomElement = (tag, css, text) => {
+//#region Functionality
+const CreateDomElement = (tag, css, text) => {
     let element = document.createElement(tag);
     element.className = css;
     if(text!=undefined)element.innerHTML = text;
     return element;
 }
 
-var  itemContainer = document.getElementById("itemContainer");
-
-itemFactory = (element)=>{
+const itemFactory = (data)=>{
     let item = CreateDomElement("div", "item");
     let itemImage       = CreateDomElement("div", "itemImage");
     let itemHeart       = CreateDomElement("div", "itemHeart", "🤍");
-    let itemTitle       = CreateDomElement("div", "itemTitle", element.title);
-    let itemDescription = CreateDomElement("div", "itemDescription", element.description);
-    let itemPrice       = CreateDomElement("div", "itemPrice", element.price);
+    let itemTitle       = CreateDomElement("div", "itemTitle", data.title);
+    let itemDescription = CreateDomElement("div", "itemDescription", data.description);
+    let itemPrice       = CreateDomElement("div", "itemPrice", data.price);
 
     item.appendChild(itemImage);
     itemImage.appendChild(itemHeart);
@@ -75,9 +76,45 @@ itemFactory = (element)=>{
     item.appendChild(itemDescription);
     item.appendChild(itemPrice);
 
+    item.addEventListener("click", ()=>{
+        let body = document.getElementById("body");
+        body.appendChild(CreateModal(data));
+    });
+
     return item;
 }
+
+const CreateModal = (data)=>{
+    let itemModal = CreateDomElement("div", "itemModal");
+    let modalImage = CreateDomElement("div", "modalImage");
+    let modalClose = CreateDomElement("div", "modalClose", "✖️");
+    let modalHeart = CreateDomElement("div", "modalHeart", "🤍");
+    let modalTitle = CreateDomElement("div", "modalTitle", data.title);
+    let modalDescription = CreateDomElement("div", "modalDescription", data.description);
+    let modalPriceContainer = CreateDomElement("div", "modalPriceContainer");
+    let modalPrice = CreateDomElement("div", "modalPrice", data.price);
+    let modalCart = CreateDomElement("button", "modalCart", "Add to cart");
+
+    itemModal.appendChild(modalImage);
+    modalImage.appendChild(modalClose);
+    modalImage.appendChild(modalHeart);
+    itemModal.appendChild(modalTitle);
+    itemModal.appendChild(modalDescription);
+    itemModal.appendChild(modalPriceContainer);
+    modalPriceContainer.appendChild(modalPrice);
+    modalPriceContainer.appendChild(modalCart);
+
+    modalClose.addEventListener("click", ()=>{
+        itemModal.style.display = "none";
+        itemModal.remove();
+    });
+    return itemModal;
+}
+//#endregion
+
+var itemContainer = document.getElementById("itemContainer");
 
 products.forEach(item=>{
     itemContainer.appendChild(itemFactory(item));
 })
+
