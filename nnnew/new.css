@@ -1,0 +1,227 @@
+@import "./common";
+@import "./variables";
+@import "./responsive";
+
+$maxWidth: 1200px;
+
+.gridContainer
+{
+    width: 70%;
+    padding: 1rem;
+    display: grid;
+    gap: .6rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    div
+    {
+        text-align: center;
+        background: yellow;
+        padding: .8rem;
+        border-radius: .4rem;
+    }
+}
+
+.blockItem
+{
+    padding: 1rem;
+    border-radius: .4rem;
+}
+.blockItem.title
+{
+    background: rgb(225, 255, 0);
+}
+.blockItem.gallery
+{
+    height: 400px; 
+    background: yellowgreen;
+}
+.blockItem.description
+{
+    background: rgb(153, 0, 255);
+    color: white;
+}
+.blockItem.amenities
+{
+    background: orangered;
+}
+.blockItem.extras
+{
+    background: rgb(0, 115, 255);
+}
+.blockItem.map
+{
+    height: 200px;
+    background:rgb(0, 255, 179);
+}
+.blockItem.amenities,
+.blockItem.extras
+{
+    display: flex;
+    justify-content: center;
+}
+
+.container
+{
+    background: pink;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 1rem;
+
+    & > div
+    {
+        height: 100%;
+        &:nth-child(1){ grid-column: 1; width: 80px; background: yellow; }
+        &:nth-child(2){ grid-column: 2; width: 100%; background: green; 
+            overflow: hidden;
+            box-sizing: border-box;
+            .sub
+            {
+                display: grid;
+                grid-template-rows: auto min-content;
+                grid-template-columns: auto;
+                height: 100%;
+                // gap: .4rem;
+
+                .viewArea
+                {
+                    grid-row: 1;
+                    height: 100%;
+                    background: brown;
+                    padding: 1rem;
+                    box-sizing: border-box;
+                    overflow-y: auto;
+                    display: flex;
+                    justify-content: center;
+
+                    .aContainer
+                    {
+                        width: 100%; max-width: $maxWidth; 
+                        background: orange;
+                        height: fit-content;
+                        border-radius: .6rem;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        padding: .4rem;
+                    }
+                }
+                .controlsArea
+                {
+                    grid-row: 2;
+                    padding: .4rem;
+                    display: flex;
+                    justify-content: center;
+
+                    div
+                    {
+                        width: 100%;
+                        max-width: $maxWidth;
+                        padding: .2rem;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        gap: .4rem;
+                        
+                        div
+                        {
+                            border-radius: .4rem;
+                            box-sizing: border-box;
+                        }
+
+                        .sContainer
+                        {
+                            padding: 1rem;
+                            background: orange;
+                        }
+                        .backButton
+                        {
+                            display: flex;
+                            width: 60px; height: 100%;
+                            background: red;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+--responsive
+
+@media only screen and (max-width: 600px)
+  {
+    
+    .gridContainer
+    {
+        width: 100% !important;
+        padding: 0 !important;
+        display: grid;
+        gap: .4rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+
+        div
+        {
+            text-align: center;
+            background: yellow;
+            padding: .6rem;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 1px;
+      }
+
+      .container
+      {
+        grid-template-columns: 100% !important;
+        grid-template-rows: min-content auto;
+        gap: 0rem !important;
+
+        & > div
+        {
+            gap: 0 !important;
+            &:nth-child(1){
+                grid-row: 1;
+                grid-column: 1 !important;
+                width: 100% !important;
+                display: none;
+            }
+            &:nth-child(2){
+                grid-row: 2;
+                grid-column: 1!important;
+
+                .sub
+                {
+                    .viewArea
+                    {
+                        padding: .4rem !important;
+
+                        .aContainer
+                        {
+                            .galleryItem
+                            {
+                                height: 600px !important;
+                            }
+                        }
+                    }
+                    .controlsArea
+                    {
+                        div
+                        {
+                            .backButton
+                            {
+                                display: flex !important;
+                                height: 100% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      }
+  }
