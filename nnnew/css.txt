@@ -116,6 +116,27 @@
 
 @media only screen and (max-width: 600px)
   {
+    .blockItem.gallery
+    {
+        height: 600px !important; 
+        background: yellowgreen;
+    }
+    .gridContainer
+    {
+        width: 100% !important;
+        padding: 0 !important;
+        display: grid;
+        gap: .4rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+
+        div
+        {
+            text-align: center;
+            background: yellow;
+            padding: .6rem;
+        }
+    }
+
     ::-webkit-scrollbar {
         width: 1px;
       }
@@ -124,10 +145,11 @@
       {
         grid-template-columns: 100% !important;
         grid-template-rows: min-content auto;
-        gap: .4rem !important;
+        gap: 0rem !important;
 
         & > div
         {
+            gap: 0 !important;
             &:nth-child(1){
                 grid-row: 1;
                 grid-column: 1 !important;
@@ -140,6 +162,18 @@
 
                 .sub
                 {
+                    .viewArea
+                    {
+                        padding: .4rem !important;
+
+                        .aContainer
+                        {
+                            .galleryItem
+                            {
+                                height: 600px !important;
+                            }
+                        }
+                    }
                     .controlsArea
                     {
                         div
