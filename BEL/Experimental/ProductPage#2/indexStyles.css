@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #9b9b9b;
+  font-family: "Nunito";
+}
+html .container,
+body .container {
+  position: fixed;
+  inset: 0;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+html .container .productImageContainerSub,
+body .container .productImageContainerSub {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+}
+html .container .productImageContainerSub .productImage,
+body .container .productImageContainerSub .productImage {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 1px 1px 0.25rem black;
+}
+html .container .productImageContainerSub .productImage .moreImages,
+body .container .productImageContainerSub .productImage .moreImages {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+html .container .productImageContainerSub .productImage .moreImages .image,
+body .container .productImageContainerSub .productImage .moreImages .image {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+html .container .productImageContainerSub .productImage .moreImages .image:nth-child(1),
+body .container .productImageContainerSub .productImage .moreImages .image:nth-child(1) {
+  background: black;
+}
+html .container .productInformationContainerSub,
+body .container .productInformationContainerSub {
+  height: 100%;
+  width: 50%;
+  background: rgb(252, 252, 252);
+  z-index: -1;
+  box-shadow: 1px 1px 2rem black;
+}
+html .container .productInformationContainerSub .productSub,
+body .container .productInformationContainerSub .productSub {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer,
+body .container .productInformationContainerSub .productSub .productInformationContainer {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sub,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sub {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .productTitle,
+body .container .productInformationContainerSub .productSub .productInformationContainer .productTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .productInfo,
+body .container .productInformationContainerSub .productSub .productInformationContainer .productInfo {
+  font-size: 2rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionTitle,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionTitle {
+  font-size: 1.8rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext {
+  font-size: 1rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .size,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .size {
+  font-weight: 800;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button {
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(1),
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(1) {
+  background: black;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(2),
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(2) {
+  background: rgb(35, 35, 139);
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(3),
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(3) {
+  background: orange;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(4),
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(4) {
+  background: pink;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(5),
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList button:nth-child(5) {
+  background: yellow;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .buyButtonContainer,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .buyButtonContainer {
+  width: 12rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 174, 0);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+html .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .priceContainer,
+body .container .productInformationContainerSub .productSub .productInformationContainer .sectionContext .sectionContextList .priceContainer {
+  width: 12rem;
+  height: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 2rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  background: #e0e0e0;
+}/*# sourceMappingURL=indexStyles.css.map */
