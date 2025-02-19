@@ -31,8 +31,7 @@ body {
 html .itemContainer,
 body .itemContainer {
   margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -224,5 +223,4 @@ body .itemModal .modalPriceContainer button {
   letter-spacing: 0.1rem;
   cursor: pointer;
   border-radius: 0.5rem;
-} /*# sourceMappingURL=indexStyles.css.map */
-
+}/*# sourceMappingURL=indexStyles.css.map */

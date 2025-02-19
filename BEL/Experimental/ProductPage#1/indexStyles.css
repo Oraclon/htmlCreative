@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Oranienbaum";
+  src: url("fonts/Oranienbaum-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(155, 155, 155);
+  font-family: "Oranienbaum";
+}
+html .container, body .container {
+  position: fixed;
+  inset: 0;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  background: rgb(175, 175, 175);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+html .container .containerSub:nth-child(1), body .container .containerSub:nth-child(1) {
+  background-color: brown;
+  width: 40%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.6rem;
+}
+html .container .productImage, body .container .productImage {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+html .container .containerSub:nth-child(2), body .container .containerSub:nth-child(2) {
+  background-color: brown;
+  width: 60%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.6rem;
+}
+html .container .productInfo, body .container .productInfo {
+  width: 100%;
+  height: 100%;
+  background: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-center;
+}
+html .container .productInfo .sub, body .container .productInfo .sub {
+  width: 100%;
+  height: 25%;
+  margin: 0.5rem;
+  background: rgb(82, 47, 47);
+}
+html .container .productInfo .productTopContainer, body .container .productInfo .productTopContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+html .container .productInfo .productTopContainer .productTitle, body .container .productInfo .productTopContainer .productTitle {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  padding-left: 1rem;
+}
+html .container .productInfo .productTopContainer .productCost, body .container .productInfo .productTopContainer .productCost {
+  font-size: 2.5rem;
+  padding-right: 1rem;
+}
+html .container .productInfo .productVariations, body .container .productInfo .productVariations {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+html .container .productInfo .productVariations .productColorVariants, body .container .productInfo .productVariations .productColorVariants {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+html .container .productInfo .productVariations .productColorVariants button, body .container .productInfo .productVariations .productColorVariants button {
+  background: red;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+}
+html .container .productInfo .productVariations .productColorVariants button:nth-child(1), body .container .productInfo .productVariations .productColorVariants button:nth-child(1) {
+  background: white;
+}
+html .container .productInfo .productVariations .productColorVariants button:nth-child(2), body .container .productInfo .productVariations .productColorVariants button:nth-child(2) {
+  background: rgb(14, 14, 49);
+}
+html .container .productInfo .productVariations .productColorVariants button:nth-child(3), body .container .productInfo .productVariations .productColorVariants button:nth-child(3) {
+  background: black;
+}
+html .container .productInfo .productVariations .productColorVariants button:nth-child(4), body .container .productInfo .productVariations .productColorVariants button:nth-child(4) {
+  background: rgb(44, 44, 44);
+}
+html .container .productInfo .productVariations .productSizeContainer, body .container .productInfo .productVariations .productSizeContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .container .productInfo .productVariations .productSizeContainer .productSize, body .container .productInfo .productVariations .productSizeContainer .productSize {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+html .container .productInfo .productVariations .productSizeContainer .productSize .size, body .container .productInfo .productVariations .productSizeContainer .productSize .size {
+  border: 1px solid black;
+}
+html .container .productInfo .productVariations .productTypeContainer, body .container .productInfo .productVariations .productTypeContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .container .productInfo .productVariations .productTypeContainer .productType, body .container .productInfo .productVariations .productTypeContainer .productType {
+  width: 10rem;
+  font-size: 2rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+html .container .productInfo .productVariations .productTypeContainer .productType .type, body .container .productInfo .productVariations .productTypeContainer .productType .type {
+  border: 1px solid black;
+  background-color: brown;
+}
+html .container .productInfo .productCart, body .container .productInfo .productCart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .container .productInfo .productCart .cardContainer button, body .container .productInfo .productCart .cardContainer button {
+  background: yellow;
+  width: 20rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+html .container .productInfo .productBotContainer, body .container .productInfo .productBotContainer {
+  height: 100%;
+}
+html .container .productInfo .productBotContainer .productDescription, body .container .productInfo .productBotContainer .productDescription {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=indexStyles.css.map */
