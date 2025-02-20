@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'SulphurPoint-Regular';
+    src: url('fonts/SulphurPoint-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SulphurPoint-Light';
+    src: url('fonts/SulphurPoint-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SulphurPoint-Bold';
+    src: url('fonts/SulphurPoint-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-regular: "SulphurPoint-Regular";
+$font-light: "SulphurPoint-Light";
+$font-bold: "SulphurPoint-Bold";

@@ -1,0 +1,165 @@
+@import "_library.scss";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 90%; // 1500px;
+    height: 90%; // 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .plansContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        .plan {
+            width: 80%;
+            height: 90%;
+            border-radius: 0.8rem;
+            //overflow: hidden;
+            border: 1px solid black;
+
+            .overlay{
+                position: relative;
+                top:0;
+                left:0;
+                transform: translate(30%, -50%);
+                z-index: 999;
+                width: 100%;
+
+                .mostPopular{
+                    width: 10rem;
+                    height: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    background: white;
+                    border-radius: 2rem;
+                    border: 2px solid black;
+                    text-align: center;
+                }
+            }
+
+            .subContainer {
+                padding: 1rem;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .planContextContainer {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 10%;
+                    box-sizing: border-box;
+
+                    .planTitle {
+                        font-size: 10vh;
+                        font-weight: 700;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        font-family: $font-light;
+                    }
+
+                    .planSubtitle {
+                        font-size: 2vh;
+                        color: rgb(74, 74, 74);
+                    }
+
+                    .planContextTitle {
+                        font-size: 3vh;
+                        font-weight: 700;
+                        text-align: left;
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+
+                    .planBenefitsList {
+                        display: grid;
+                        grid-template-columns: repeat(3, 30%);
+                        grid-template-rows: repeat(3, auto);
+                        grid-row-gap: .4rem;
+                        grid-column-gap: .5rem;
+                        justify-items: start;
+
+                        .benefit {
+                            color: rgb(74, 74, 74);
+                        }
+                    }
+
+                    .planPrice {
+                        font-size: 3vh;
+                        font-weight: 700;
+                        text-align: left;
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+
+                    .buttonContainer{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        button {
+                            width: 15rem;
+                            height: 3rem;
+                            background: white;
+                            border-radius: .6rem;
+                            border: 1px solid orange;
+                            color: orange;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+        .plan:nth-child(1) {
+            background: rgb(255, 255, 255);
+            box-shadow: 1px 1px 1rem black;
+        }
+
+        .plan:nth-child(2) {
+            background: rgb(255, 255, 255);
+            border: 2px solid black;
+            box-shadow: 1px 1px 2rem black;
+        }
+
+        .plan:nth-child(3) {
+            background: rgb(255, 255, 255);
+            box-shadow: 1px 1px 1rem black;
+        }
+
+        .plan:nth-child(2) {
+            height: 95%;
+        }
+    }
+}
