@@ -10,15 +10,30 @@
         <div class="Bodycontainer">
             <div class="nav">
                 <div class="cartContainer">
-                    <input type="text" placeholder="0 item(s) - 0.00€"/>
+                    <input
+                        id="cartInput"
+                        type="text"
+                    />
                     <div class="cart">🛒</div>
                     <div class="tooltip">
                         <div class="tooltipContainer">
-                            <div class="tooltipContext">Your shopping cart is empty!</div>
+                            <div class="tooltipContext" id="emptyCart">Your shopping cart is empty!</div>
+                            <div class="cartList" id="cartList">
+                                <!-- <div class="item">
+                                    <div class="itemName">Lorem ipsum</div>
+                                    <div class="itemQuantity">1</div>
+                                    <div class="itemPrice">5</div>
+                                </div> -->
+                            </div>
+                            <div class="tooltipBotContainer">
+                                <div class="totalPrice" id="cartTotalPrice">0</div>
+                                <button>Checkout</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="functionality.js"></script>
     </body>
 </html>
