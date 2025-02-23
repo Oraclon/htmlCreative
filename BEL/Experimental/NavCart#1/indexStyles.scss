@@ -1,0 +1,113 @@
+@import "_library.scss";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to bottom, 
+        #22223b 20%, 
+        #4a4e69 40%, 
+        #9a8c98 60%, 
+        #c9ada7 80%, 
+        #f2e9e4 100%
+    );
+
+    font-family: $font-regular;
+}
+
+.Bodycontainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: .5rem;
+    box-sizing: border-box;
+    
+    .nav{
+        width: 100%;
+        height: 3rem;
+        background: #4a4e69;
+        border-radius: .6rem;
+        box-shadow: 0px 0px .6rem #4a4e69;
+        transition: all .3s ease;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        
+        &:hover{
+            box-shadow: 0px 0px .9rem #f2e9e4;
+            transition: all .3s ease;
+        }
+
+        .cartContainer{
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            input{
+                width: 10rem;
+                background: #f2e9e4;
+                color: #22223b;
+                border-radius: .6rem;
+                height: 1.3rem;
+                outline: none;
+                border: none;
+                box-shadow: 0px 0px 1rem #9a8c98 inset;
+            }
+
+            .cart{
+                position: absolute;
+                right: 5px;
+                cursor: pointer;
+            }
+
+            .cart:hover + .tooltip {
+                display: flex;
+            }
+
+            .tooltip{
+                display: none;
+                position: absolute;
+                top: 1rem;
+                width: 15rem;
+                height: 200px;
+                //background: red;
+                //display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                &:hover{
+                    display: flex;
+                }
+
+                .tooltipContainer{
+                    height: 190px;
+                    width: 100%;
+                    background: #f2e9e4;
+                    border-radius: .6rem;
+
+                    .tooltipContext{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

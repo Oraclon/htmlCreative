@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Play-Bold";
+  src: url("fonts/Play-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Play-Regular";
+  src: url("fonts/Play-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #22223b 20%, #4a4e69 40%, #9a8c98 60%, #c9ada7 80%, #f2e9e4 100%);
+  font-family: "Play-Regular";
+}
+
+.Bodycontainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.Bodycontainer .nav {
+  width: 100%;
+  height: 3rem;
+  background: #4a4e69;
+  border-radius: 0.6rem;
+  box-shadow: 0px 0px 0.6rem #4a4e69;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+.Bodycontainer .nav:hover {
+  box-shadow: 0px 0px 0.9rem #f2e9e4;
+  transition: all 0.3s ease;
+}
+.Bodycontainer .nav .cartContainer {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Bodycontainer .nav .cartContainer input {
+  width: 10rem;
+  background: #f2e9e4;
+  color: #22223b;
+  border-radius: 0.6rem;
+  height: 1.3rem;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 1rem #9a8c98 inset;
+}
+.Bodycontainer .nav .cartContainer .cart {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+.Bodycontainer .nav .cartContainer .cart:hover + .tooltip {
+  display: flex;
+}
+.Bodycontainer .nav .cartContainer .tooltip {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  width: 15rem;
+  height: 200px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.Bodycontainer .nav .cartContainer .tooltip:hover {
+  display: flex;
+}
+.Bodycontainer .nav .cartContainer .tooltip .tooltipContainer {
+  height: 190px;
+  width: 100%;
+  background: #f2e9e4;
+  border-radius: 0.6rem;
+}
+.Bodycontainer .nav .cartContainer .tooltip .tooltipContainer .tooltipContext {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=indexStyles.css.map */
