@@ -12,7 +12,7 @@
 
             <!--#region [Deal - Report Tab]-->
             <div class="popupContainer dealTab" id="dealTab">
-                <div class="closeButton"></div>
+                <div class="closeButton" onclick="action($this)"></div>
                 <div class="body">
                     <div class="scroll">
                         <div class="infoBlock">
@@ -104,25 +104,30 @@
             </div>
             <!--#endregion-->
         
-            <div class="containerButton" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);">
-                <button class="actionButton deal" onclick="showTab('dealTab')">Deal Tab</button>
-                <button class="actionButton deal" onclick="showTab('userTab')">User Tab</button>
-                <button class="actionButton deal" onclick="showTab('loginTab')">Login Tab</button>
-                <button class="actionButton deal" onclick="showTab('all')">All Close</button>
+            <div class="containerButton" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); background: white; padding: 1rem; border-radius: .6rem;">
+                <button class="actionButton deal" onmouseenter="showTab('dealTab')">Deal Tab</button>
+                <button class="actionButton deal" onmouseenter="showTab('userTab')">User Tab</button>
+                <button class="actionButton deal" onmouseenter="showTab('loginTab')">Login Tab</button>
+                <button class="actionButton deal" onmouseenter="showTab('all')">Close</button>
             </div>
+
         </div>
     </div>
 
     <script>
         let tabs = ["dealTab","userTab","loginTab"];
-        tabs.map(tab=>{ let item = document.getElementById(tab); item.style.display="none"; });
+        // tabs.map(tab=>{ let item = document.getElementById(tab); item.style.display="none"; });
         const showTab = (selectedTab)=>{
             if(selectedTab == "all")
-                tabs.map(x=> document.getElementById(x).style.display = "none" )
+                tabs.map(x=> document.getElementById(x).classList.remove("active"));
             else
-                for(let tab of tabs)
-                    document.getElementById(tab).style.display = tab == selectedTab ? "grid" : "none";
+            {
+                tabs.map(x=> document.getElementById(x).classList.remove("active"));
+                document.getElementById(selectedTab).classList.add("active")
+            } 
         }
+        
+        // const action = (thisa)=>{ debugger }
     </script>
 </body>
 </html>
