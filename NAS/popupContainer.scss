@@ -8,6 +8,7 @@ html,body
 
 input{ padding: 1rem; }
 
+//#region Action Buttons
 .actionButton
 {
     padding: 1rem;
@@ -24,6 +25,7 @@ input{ padding: 1rem; }
 {
     background: rgb(128, 0, 0);
 }
+//#endregion
 
 .popupHolder
 {
@@ -67,6 +69,7 @@ input{ padding: 1rem; }
     cursor: pointer;
 }
 
+//#region popupContainer
 .popupContainer
 {
     position: relative;
@@ -78,6 +81,15 @@ input{ padding: 1rem; }
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: repeat(1, 1fr);
+
+    .closeButton
+    {
+        position: absolute;
+        width: 30px; height: 30px;
+        background: red;
+        top: 20px; right: 20px;
+        border-radius: .4rem;
+    }
 
     .head{
         grid-row: 1;
@@ -177,6 +189,7 @@ input{ padding: 1rem; }
         }
     }
 }
+//#endregion
 
 @media only screen and (max-width: 600px)
 {
