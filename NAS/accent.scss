@@ -1,3 +1,35 @@
+:root
+{
+    --fs1: 2rem;
+    --fs2: 1.5rem;
+    --fs3: 1rem;
+    --fs4: .8rem;
+}
+
+@media only screen and (max-width: 600px) {
+    :root
+    {
+        --fs1: 3rem;
+        --fs2: 2.5rem;
+        --fs3: 2rem;
+        --fs4: 2.8rem;
+    }
+}
+.strong 
+{
+    font-weight: 700;
+}
+.huge   { font-size: var(--fs1); }
+.big    { font-size: var(--fs2); }
+.normal { font-size: var(--fs3); }
+.small  { font-size: var(--fs4); }
+h1{ @extend .huge };
+h2{ @extend .big };
+h3{ @extend .normal };
+h4{ @extend .small };
+
+----
+
 .strong 
 {
     font-weight: 700;
