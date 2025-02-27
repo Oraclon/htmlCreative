@@ -1,0 +1,24 @@
+@import "./root";
+
+.strong { font-weight: 700; }
+.huge   { font-size: var(--fs1); }
+.big    { font-size: var(--fs2); }
+.normal { font-size: var(--fs3); }
+.small  { font-size: var(--fs4); }
+
+h1{ @extend .huge };
+h2{ @extend .big };
+h3{ @extend .normal };
+h4{ @extend .small };
+
+.mainContainer.dark
+{
+    
+    .text{ color: red;  transition: color $transitionDelay $transitionEffect;}
+    .accent{ color: green; transition: color $transitionDelay $transitionEffect;}
+}
+.mainContainer.light
+{
+    .text{ color: blue; transition: color $transitionDelay $transitionEffect;}
+    .accent{ color: rgb(221, 205, 160); transition: color $transitionDelay $transitionEffect;}
+}
