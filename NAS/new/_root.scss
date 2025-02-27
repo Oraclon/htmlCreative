@@ -17,4 +17,9 @@
 }
 
 $transitionDelay: .4s;
-$transitionEffect: ease-in-out;
+$transitionEffect: ease-in;
+
+@mixin transition()
+{
+    transition: background $transitionDelay $transitionEffect, color $transitionDelay $transitionEffect;
+}
