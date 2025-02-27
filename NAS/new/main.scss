@@ -66,7 +66,6 @@ button{ border: none; }
 .mainContainer.dark
 {
     
-
     input { color: white; }
     .achighlight
     {
@@ -78,7 +77,7 @@ button{ border: none; }
     }
 
     .popupContainer
-    {
+    {@include transition();
         background: rgb(26, 26, 26);
         color: white;
     }
@@ -90,7 +89,7 @@ button{ border: none; }
 .mainContainer.light
 {
 
-
+    
     input{ color: black; }
     .achighlight
     {
@@ -101,7 +100,7 @@ button{ border: none; }
         color: brown;
     }
     .popupContainer
-    {
+    {@include transition();
         background: white;
         color: back;
     }
