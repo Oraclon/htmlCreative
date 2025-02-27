@@ -13,12 +13,11 @@ h4{ @extend .small };
 
 .mainContainer.dark
 {
-    
-    .text{ color: red;  transition: color $transitionDelay $transitionEffect;}
-    .accent{ color: green; transition: color $transitionDelay $transitionEffect;}
+    .text{ color: red;  @include transition(); }
+    .accent{ color: green; @include transition(); }
 }
 .mainContainer.light
 {
-    .text{ color: blue; transition: color $transitionDelay $transitionEffect;}
-    .accent{ color: rgb(221, 205, 160); transition: color $transitionDelay $transitionEffect;}
+    .text{ color: blue; @include transition(); }
+    .accent{ color: rgb(221, 205, 160); @include transition(); }
 }
