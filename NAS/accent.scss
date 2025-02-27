@@ -1,0 +1,36 @@
+.strong 
+{
+    font-weight: 700;
+}
+.huge   { font-size: 2rem; }
+.big    { font-size: 1.5rem; }
+.normal { font-size: 1rem; }
+.small  { font-size: .8rem; }
+h1{ @extend .huge };
+h2{ @extend .big };
+h3{ @extend .normal };
+h4{ @extend .small };
+
+.mainContainer.dark
+{
+  .text
+    {
+        color: red;
+    }
+    .accent
+    {
+        color: blue;
+    }
+}
+
+.mainContainer.light
+{
+  .text
+    {
+        color: rgb(14, 163, 0);
+    }
+    .accent
+    {
+        color: rgb(153, 0, 255);
+    }
+}
