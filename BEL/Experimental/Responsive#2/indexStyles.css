@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "Play-Bold";
+  src: url("fonts/Play-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Play-Regular";
+  src: url("fonts/Play-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222831;
+  font-family: "Play-Regular";
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr;
+  grid-gap: 0.5rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.container > .listContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background: #393E46;
+  border-radius: 0.6rem;
+  overflow-y: auto;
+  grid-column: 1;
+}
+.container > .listContainer::-webkit-scrollbar {
+  display: none;
+}
+.container > .listContainer > .chat {
+  width: 100%;
+  height: 125px;
+  min-height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  background: #00ADB5;
+  border-radius: 0.3rem;
+}
+.container > .listContainer > .chat > .chatImage {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(57, 62, 70, 0.4666666667);
+}
+.container > .listContainer > .chat > .chatSub {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container > .listContainer > .chat > .chatSub > .userName {
+  width: 100%;
+  height: 25%;
+}
+.container > .contextContainer {
+  width: 100%;
+  height: 100%;
+  background: #393E46;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  grid-column: 2;
+}
+.container > .contextContainer > .top {
+  width: 100%;
+  height: 150px;
+  background: #252A34;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.6rem;
+  color: white;
+  display: flex;
+}
+.container > .contextContainer > .top > .user {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.container > .contextContainer > .top > .user > .userIcon {
+  width: 125px;
+  height: 100%;
+  background: rgba(57, 62, 70, 0.4666666667);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container > .contextContainer > .top > .user > .userInfo {
+  width: 100%;
+  height: 100%;
+}
+.container > .contextContainer > .top > .user > .userInfo > .userName {
+  font-size: 2rem;
+}
+.container > .contextContainer > .top > .user > .userInfo > .userStatus {
+  font-size: 1.2rem;
+}
+.container > .contextContainer > .top > .user > .userInfo > .online {
+  color: green;
+}
+.container > .contextContainer > .top > .user > .userInfo > .offline {
+  color: red;
+}
+.container > .contextContainer > .top > .closeChat {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 0.1rem solid #393E46;
+  display: none;
+}
+.container > .contextContainer > .messagesContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  background: rgb(71, 78, 88);
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  overflow-y: auto;
+}
+.container > .contextContainer > .messagesContainer::-webkit-scrollbar {
+  display: none;
+}
+.container > .contextContainer > .messagesContainer > .messageSender {
+  max-width: 30%;
+  align-self: flex-end;
+  background: #00ADB5;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  border-top-right-radius: 0.1rem;
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  box-shadow: 0 0 0.25rem #222831;
+}
+.container > .contextContainer > .messagesContainer > .messageRecepient {
+  max-width: 30%;
+  align-self: flex-start;
+  background: #00ADB5;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  border-top-left-radius: 0.1rem;
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  box-shadow: 0 0 0.25rem #222831;
+}
+.container > .contextContainer > .messagesContainer > .messagesEmpty {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .contextContainer {
+    display: none !important;
+  }
+  .closeChat {
+    display: flex !important;
+  }
+  .contextContainer {
+    width: 100%;
+  }
+}/*# sourceMappingURL=indexStyles.css.map */

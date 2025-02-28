@@ -1,0 +1,68 @@
+:root {
+  --fs1: 2rem;
+  --fs2: 1.5rem;
+  --fs3: 1rem;
+  --fs4: .8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --fs1: 3rem;
+    --fs2: 2.5rem;
+    --fs3: 2rem;
+    --fs4: 2.8rem;
+  }
+}
+.strong {
+  font-weight: 700;
+}
+
+.huge, h1 {
+  font-size: var(--fs1);
+}
+
+.big, h2 {
+  font-size: var(--fs2);
+}
+
+.normal, h3 {
+  font-size: var(--fs3);
+}
+
+.small, h4 {
+  font-size: var(--fs4);
+}
+
+---- .strong {
+  font-weight: 700;
+}
+
+.huge, h1 {
+  font-size: 2rem;
+}
+
+.big, h2 {
+  font-size: 1.5rem;
+}
+
+.normal, h3 {
+  font-size: 1rem;
+}
+
+.small, h4 {
+  font-size: 0.8rem;
+}
+
+.mainContainer.dark .text {
+  color: red;
+}
+.mainContainer.dark .accent {
+  color: blue;
+}
+
+.mainContainer.light .text {
+  color: rgb(14, 163, 0);
+}
+.mainContainer.light .accent {
+  color: rgb(153, 0, 255);
+}/*# sourceMappingURL=accent.css.map */

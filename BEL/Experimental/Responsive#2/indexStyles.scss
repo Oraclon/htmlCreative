@@ -1,0 +1,242 @@
+@import "_library.scss";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #222831;
+    font-family: $font-regular;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(1,1fr);
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr;
+    grid-gap: .5rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &> .listContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .25rem;
+        padding: .5rem;
+        box-sizing: border-box;
+        background: #393E46;
+        border-radius: .6rem;
+        overflow-y: auto;
+        grid-column: 1;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &> .chat{
+            width: 100%;
+            height: 125px;
+            min-height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .25rem;
+            padding: .2rem;
+            box-sizing: border-box;
+            background: #00ADB5;
+            border-radius: .3rem;
+
+            &> .chatImage{
+                width: 40%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #393e4677;
+            }
+
+            &> .chatSub{
+                width: 60%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+
+                &> .userName{
+                    width: 100%;
+                    height: 25%;
+                }
+            }
+        }
+    }
+
+    &> .contextContainer{
+        width: 100%;
+        height: 100%;
+        background: #393E46;
+        border-radius: .6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap:1rem;
+        padding:.5rem;
+        box-sizing: border-box;
+        grid-column: 2;
+
+        &> .top{
+            width: 100%;
+            height: 150px;
+            background: #252A34;
+            padding:.5rem;
+            box-sizing: border-box;
+            border-radius: .6rem;
+            color:white;
+            display: flex;
+            
+            &> .user{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap:1rem;
+
+                &> .userIcon{
+                    width: 125px;
+                    height: 100%;
+                    background: #393e4677;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                &> .userInfo{
+                    width: 100%;
+                    height: 100%;
+
+                    &> .userName{
+                        font-size: 2rem;
+                    }
+
+                    &> .userStatus{
+                        font-size: 1.2rem;
+                    }
+
+                    &> .online{
+                        color:green;
+                    }
+
+                    &> .offline{
+                        color:red;
+                    }
+                }
+            }
+
+            &> .closeChat{
+                width: 50px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: .1rem solid #393E46;
+                display: none;
+            }
+        }
+
+        &> .messagesContainer{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-height: 700px;
+            background: rgb(71, 78, 88);
+            padding:.5rem;
+            box-sizing: border-box;
+            border-radius: .6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap:1rem;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &> .messageSender{
+                max-width: 30%;
+                align-self: flex-end;
+                background: #00ADB5;
+                padding: .5rem;
+                box-sizing: border-box;
+                border-radius: 1rem;
+                border-top-right-radius: .1rem;
+                font-size: 1.1rem;
+                word-wrap: break-word;
+                box-shadow: 0 0 .25rem #222831;
+            }
+
+            &> .messageRecepient{
+                max-width: 30%;
+                align-self: flex-start;
+                background: #00ADB5;
+                padding: .5rem;
+                box-sizing: border-box;
+                border-radius: 1rem;
+                border-top-left-radius: .1rem;
+                font-size: 1.1rem;
+                word-wrap: break-word;
+                box-shadow: 0 0 .25rem #222831;
+            }
+
+            &> .messagesEmpty{
+                position: absolute;
+                top:0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .contextContainer{
+        display: none !important;
+    }
+
+    .closeChat{
+        display: flex !important;
+    }
+
+    .contextContainer{
+        width: 100%;
+    }
+
+}
