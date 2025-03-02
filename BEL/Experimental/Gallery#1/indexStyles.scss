@@ -1,0 +1,110 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #222831;
+    font-family: $font-regular;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    width: 50%;
+    height: 60%;
+    max-width: 900px;
+    max-height: 600px;
+    background: #393e46;
+    border-radius: 0.6rem;
+    border-bottom-left-radius: 2.4rem;
+    border-bottom-right-radius: 2.4rem;
+    box-shadow: 0 0 2rem #393e46;
+    overflow: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    & > .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 95%;
+        background: rgba(238, 238, 238, 0.25);
+        //border-radius: .6rem;
+        overflow: hidden;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        & > .navContainer {
+            position: absolute;
+            top: 50%;
+            //left: 50%;
+            //transform: translate(50%,50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            //padding: .5rem;
+            //box-sizing: border-box;
+
+            & > .navControl {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: rgba(238, 238, 238, 0.5);
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                transition: all 0.2s;
+
+                &:hover {
+                    background: rgba(238, 238, 238, 1);
+                    transition: all 0.2s;
+                }
+            }
+        }
+    }
+
+    & > .imagesButtonList {
+        width: 100%;
+        height: 5%;
+        border-radius: 0.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        & > .item {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #00adb5;
+            transition: all 0.2s;
+
+            &:hover {
+                box-shadow: 0 0 1rem #eeeeee;
+                transition: all 0.2s;
+            }
+        }
+
+        & > .selected {
+            background: #eeeeee !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+}
