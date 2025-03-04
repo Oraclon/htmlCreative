@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+    <style>
+
+        .testButton
+        {
+            width: 60px; height: 60px;
+            background: brown;
+            border-radius: .6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background .4s ease-in-out;
+        }
+
+        .testButton > .icon { font-weight: 700; font-size: 1rem; }
+
+        .testButton > .label { 
+            font-size: .6rem;
+            display: none;
+        }
+        
+        .testButton.active{
+            transition: background .2s ease-in-out;
+            background: rgb(255, 95, 140);
+        }
+        .testButton.active >.icon{
+        }
+        .testButton.active >.label{ 
+            transition: .4s margin-right  ease-in-out;
+            display: block;
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 1rem; display: flex; gap: .4rem; flex-wrap: wrap; justify-content: center;" id="hold"></div>
+    <script>
+
+        let cont = document.getElementById("hold");
+
+        [...Array(14)].map(x=>{
+            let element = document.createElement("div");
+            element.classList.add("testButton");
+
+            let icon = document.createElement("div");
+            icon.innerHTML = "a";
+            icon.classList.add("icon");
+            element.appendChild(icon);
+
+            let label = document.createElement("div");
+            label.innerHTML = "label";
+            label.classList.add("label");
+            element.appendChild(label);
+
+            element.onclick = ()=>{
+                console.log(element.classList.contains("active"))
+                console.log(element.classList)
+                element.classList.add("active");
+            }
+
+            element.onmouseleave = ()=>{
+                element.classList.remove("active");
+            }
+
+            cont.appendChild(element);
+        });
+        
+    </script>
+</body>
+</html>
