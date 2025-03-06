@@ -1,0 +1,145 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro";
+}
+html *,
+body * {
+  box-sizing: border-box;
+}
+
+.dark {
+  background: #1f2124;
+}
+.dark > .sub {
+  background: #22262b;
+  border-color: #ffb31a !important;
+}
+.dark > .sub > .head > .title {
+  color: #f6f6f6;
+}
+.dark > .sub > .head > .subtitle {
+  color: #f6f6f6;
+}
+.dark > .sub > .body > input {
+  background: #282b2f;
+  color: #f6f6f6;
+}
+.dark > .sub > .body > .btn {
+  background: #ffb31a;
+  color: #1f2124;
+}
+.dark > .sub > .footer > .link:nth-child(1) {
+  color: #ffb31a;
+}
+.dark > .sub > .footer > .link:nth-child(2) {
+  color: #f6f6f6;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+.light > .sub > .head > .title {
+  color: #282b2f;
+}
+.light > .sub > .head > .subtitle {
+  color: #282b2f;
+}
+.light > .sub > .body > input {
+  background: #f6f6f6;
+  color: #282b2f;
+}
+.light > .sub > .body > .btn {
+  background: #ffb31a;
+  color: #1f2124;
+}
+.light > .sub > .footer > .link:nth-child(1) {
+  color: #ffb31a;
+}
+.light > .sub > .footer > .link:nth-child(2) {
+  color: #282b2f;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container > .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container > .box > .sub {
+  width: 400px;
+  height: 700px;
+  border: 1px solid;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.container > .box > .sub > .head {
+  width: 80%;
+  text-align: center;
+}
+.container > .box > .sub > .head > .title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.15rem;
+}
+.container > .box > .sub > .head > .subtitle {
+  font-size: 12;
+  font-weight: 500;
+  letter-spacing: -0.1rem;
+}
+.container > .box > .sub > .body {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.container > .box > .sub > .body > input {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  border: none;
+}
+.container > .box > .sub > .body > input::before {
+  content: "asd";
+}
+.container > .box > .sub > .body > .btn {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.container > .box > .sub > .footer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}/*# sourceMappingURL=indexStyles.css.map */

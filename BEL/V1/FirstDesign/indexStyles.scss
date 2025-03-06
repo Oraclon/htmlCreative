@@ -1,0 +1,191 @@
+@import "_variables.scss";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+// COLOR THEMES
+.dark {
+    background: $darkBody;
+
+    & > .sub {
+        background: $darkContainer;
+        border-color: $accent !important;
+
+        & > .head {
+            & > .title {
+                color: $lightInput;
+            }
+            & > .subtitle {
+                color: $lightInput;
+            }
+        }
+
+        &> .body{
+
+            &> input{
+                background: $darkInput;
+                color: $lightInput;
+            }
+
+            &> .btn{
+                background: $accent;
+                color: $darkBody;
+            }
+        }
+
+        &> .footer{
+
+            &> .link{
+                &:nth-child(1){
+                    color: $accent;
+                }
+                &:nth-child(2){
+                    color: $lightInput;
+                }
+            }
+        }
+    }
+}
+
+.light {
+    background: $lightBody;
+
+    & > .sub {
+        background: $lightContainer;
+        border-color: $accent !important;
+
+        & > .head {
+            & > .title {
+                color: $darkInput;
+            }
+            & > .subtitle {
+                color: $darkInput;
+            }
+        }
+
+        &> .body{
+
+            &> input{
+                background: $lightInput;
+                color: $darkInput;
+            }
+
+            &> .btn{
+                background: $accent;
+                color: $darkBody;
+            }
+        }
+
+        &> .footer{
+
+            &> .link{
+                &:nth-child(1){
+                    color: $accent;
+                }
+                &:nth-child(2){
+                    color: $darkInput;
+                }
+            }
+        }
+    }
+}
+
+// STRUCTURE
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & > .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > .sub {
+            width: 400px;
+            height: 700px;
+            border: 1px solid;
+            border-radius: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            & > .head {
+                width: 80%;
+                text-align: center;
+
+                & > .title {
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    letter-spacing: -0.15rem;
+                }
+
+                & > .subtitle {
+                    font-size: 12;
+                    font-weight: 500;
+                    letter-spacing: -0.1rem;
+                }
+            }
+
+            & > .body {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                &> input{
+                    width: 100%;
+                    height: 2.5rem;
+                    border-radius: .4rem;
+                    border:none;
+                    &::before{
+                        content: "asd";
+                    }
+                }
+
+                & > .btn {
+                    width: 100%;
+                    height: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: .6rem;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+
+            &> .footer{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+}
