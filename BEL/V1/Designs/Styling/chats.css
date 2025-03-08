@@ -1,0 +1,208 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dark {
+  background: #1f2124;
+}
+.dark > .sub {
+  background: #22262b;
+  border-color: #ffb31a !important;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container > .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container > .box > .sub {
+  width: 400px;
+  height: 700px;
+  border: 1px solid;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.container > .box > .sub > .head {
+  width: 100%;
+  text-align: center;
+}
+.container > .box > .sub > .footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dark > .sub > .body > .list > .chat {
+  color: #f6f6f6;
+}
+.dark > .sub > .body > .list > .chat > .img {
+  background: #3c3c3c;
+}
+.dark > .sub > .body > .list > .chat > .img > .statusOnline {
+  background: #31c149;
+}
+.dark > .sub > .body > .list > .chat > .img > .statusOffline {
+  background: #f53737;
+}
+.dark > .sub > .footer > .proceed {
+  background: #31c149;
+  color: #f6f6f6;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+.light > .sub > .body > .list > .chat {
+  color: #282b2f;
+}
+.light > .sub > .body > .list > .chat > .img {
+  background: #3c3c3c;
+}
+.light > .sub > .body > .list > .chat > .img > .statusOnline {
+  background: #31c149;
+}
+.light > .sub > .body > .list > .chat > .img > .statusOffline {
+  background: #f53737;
+}
+.light > .sub > .footer > .proceed {
+  background: #31c149;
+  color: #f6f6f6;
+}
+
+.container > .box > .sub {
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.container > .box > .sub > .body {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+.container > .box > .sub > .body > .list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.container > .box > .sub > .body > .list > .chat {
+  width: 100%;
+  height: 64px;
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: min-content auto;
+  gap: 0.5rem;
+}
+.container > .box > .sub > .body > .list > .chat > .img {
+  position: relative;
+  width: 64px;
+  height: 100%;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+}
+.container > .box > .sub > .body > .list > .chat > .img > .statusOnline {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+.container > .box > .sub > .body > .list > .chat > .img > .statusOffline {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+.container > .box > .sub > .body > .list > .chat > .user {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  grid-column: 2;
+}
+.container > .box > .sub > .body > .list > .chat > .user > .top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.container > .box > .sub > .body > .list > .chat > .user > .top > .name {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.container > .box > .sub > .body > .list > .chat > .user > .top > .dateSent {
+  font-size: 0.8rem;
+  letter-spacing: -0.1rem;
+  font-weight: 500;
+}
+.container > .box > .sub > .body > .list > .chat > .user > .bot {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.container > .box > .sub > .body > .list > .chat > .user > .bot > .preview {
+  width: 100%;
+  height: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: -0.1rem;
+  overflow: hidden;
+}
+.container > .box > .sub > .footer {
+  width: 80%;
+  height: 100%;
+  justify-content: flex-end;
+}
+.container > .box > .sub > .footer > .proceed {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}/*# sourceMappingURL=chats.css.map */
