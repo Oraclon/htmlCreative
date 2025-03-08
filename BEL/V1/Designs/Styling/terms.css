@@ -1,0 +1,133 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro";
+}
+html *,
+body * {
+  box-sizing: border-box;
+}
+
+.dark {
+  background: #1f2124;
+}
+.dark > .sub {
+  background: #22262b;
+  border-color: #ffb31a !important;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container > .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container > .box > .sub {
+  width: 400px;
+  height: 700px;
+  border: 1px solid;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.container > .box > .sub > .head {
+  width: 100%;
+  text-align: center;
+}
+.container > .box > .sub > .footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dark > .sub > .body {
+  color: #ffffff;
+}
+.dark > .sub > .footer > .proceed {
+  background: #31c149;
+  color: #f6f6f6;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+.light > .sub > .body {
+  color: #1f2124;
+}
+.light > .sub > .footer > .proceed {
+  background: #31c149;
+  color: #f6f6f6;
+}
+
+.container > .box > .sub {
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.container > .box > .sub > .body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.container > .box > .sub > .body > .term {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.container > .box > .sub > .body > .term > .header {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.1rem;
+}
+.container > .box > .sub > .body > .term > .paragraph {
+  font-size: 0.7rem;
+}
+.container > .box > .sub > .footer {
+  width: 80%;
+  height: 100%;
+  justify-content: flex-end;
+}
+.container > .box > .sub > .footer > .proceed {
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}/*# sourceMappingURL=terms.css.map */

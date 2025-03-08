@@ -1,0 +1,95 @@
+@import "base.scss";
+
+// COLOR THEMES
+.dark {
+    & > .sub {
+        & > .body {
+            color: $lightContainer;
+        }
+
+        & > .footer {
+            & > .proceed {
+                background: $success;
+                color: $lightBody;
+            }
+        }
+    }
+}
+
+.light {
+    background: $lightBody;
+
+    & > .sub {
+        background: $lightContainer;
+        border-color: $accent !important;
+
+        & > .body {
+            color: $darkBody;
+        }
+
+        & > .footer {
+            & > .proceed {
+                background: $success;
+                color: $lightBody;
+            }
+        }
+    }
+}
+
+// STRUCTURE
+.container {
+    & > .box {
+        & > .sub {
+            justify-content: flex-start;
+            padding: 1rem;
+
+            & > .body {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+
+                &> .term{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 1rem;
+
+                    & > .header {
+                        font-size: 1.6rem;
+                        font-weight: 800;
+                        letter-spacing: -.1rem;
+                    }
+    
+                    &> .paragraph{
+                        font-size: .7rem;
+                    }
+                }
+
+                
+            }
+
+            & > .footer {
+                width: 80%;
+                height: 100%;
+                justify-content: flex-end;
+
+                & > .proceed {
+                    width: 100%;
+                    height: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0.6rem;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
