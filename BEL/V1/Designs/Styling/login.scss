@@ -3,7 +3,6 @@
 // COLOR THEMES
 .dark {
     & > .sub {
-
         & > .head {
             & > .title {
                 color: $lightInput;
@@ -13,26 +12,24 @@
             }
         }
 
-        &> .body{
-
-            &> input{
+        & > .body {
+            & > input {
                 background: $darkInput;
                 color: $lightInput;
             }
 
-            &> .btn{
+            & > .btn {
                 background: $accent;
                 color: $darkBody;
             }
         }
 
-        &> .footer{
-
-            &> .link{
-                &:nth-child(1){
+        & > .footer {
+            & > .link {
+                &:nth-child(1) {
                     color: $accent;
                 }
-                &:nth-child(2){
+                &:nth-child(2) {
                     color: $lightInput;
                 }
             }
@@ -56,26 +53,24 @@
             }
         }
 
-        &> .body{
-
-            &> input{
+        & > .body {
+            & > input {
                 background: $lightInput;
                 color: $darkInput;
             }
 
-            &> .btn{
+            & > .btn {
                 background: $accent;
                 color: $darkBody;
             }
         }
 
-        &> .footer{
-
-            &> .link{
-                &:nth-child(1){
+        & > .footer {
+            & > .link {
+                &:nth-child(1) {
                     color: $accent;
                 }
-                &:nth-child(2){
+                &:nth-child(2) {
                     color: $darkInput;
                 }
             }
@@ -85,13 +80,9 @@
 
 // STRUCTURE
 .container {
-
     & > .box {
-
         & > .sub {
-
             & > .head {
-
                 & > .title {
                     font-size: 2.2rem;
                     font-weight: 800;
@@ -113,12 +104,12 @@
                 align-items: center;
                 gap: 0.5rem;
 
-                &> input{
+                & > input {
                     width: 100%;
                     height: 2.5rem;
-                    border-radius: .4rem;
-                    border:none;
-                    &::before{
+                    border-radius: 0.4rem;
+                    border: none;
+                    &::before {
                         content: "asd";
                     }
                 }
@@ -129,7 +120,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border-radius: .6rem;
+                    border-radius: 0.6rem;
                     font-size: 1.1rem;
                     font-weight: 700;
                     cursor: pointer;

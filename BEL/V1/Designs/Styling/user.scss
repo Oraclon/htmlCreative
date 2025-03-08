@@ -1,0 +1,177 @@
+@import "base.scss";
+
+// COLOR THEMES
+.dark {
+    & > .sub {
+        & > .head {
+            & > .userInfoCard {
+                background: $darkBody;
+
+                & > .img {
+                    background: $imgSkeleton;
+                }
+                & > .info {
+                    color: $lightContainer;
+
+                    & > .expires {
+                        color: $lightContainer;
+                    }
+                }
+            }
+        }
+
+        & > .body {
+            & > input {
+                background: $darkInput;
+                color: $lightInput;
+            }
+
+            & > .btn {
+                background: $darkInput;
+                color: $lightBody;
+            }
+        }
+
+        & > .footer {
+            & > .logout {
+                background: $danger;
+                color: $lightBody;
+            }
+        }
+    }
+}
+
+.light {
+    background: $lightBody;
+
+    & > .sub {
+        background: $lightContainer;
+        border-color: $accent !important;
+
+        & > .head {
+            & > .userInfoCard {
+                background: $accent;
+
+                & > .img {
+                    background: $imgSkeleton;
+                }
+                & > .info {
+                    color: $darkContainer;
+
+                    & > .expires {
+                        color: $lightContainer;
+                    }
+                }
+            }
+        }
+
+        & > .body {
+            & > .btn {
+                background: $lightBody;
+                color: $darkBody;
+            }
+        }
+
+        & > .footer {
+            & > .logout {
+                background: $danger;
+                color: $lightBody;
+            }
+        }
+    }
+}
+
+// STRUCTURE
+.container {
+    & > .box {
+        & > .sub {
+            justify-content: flex-start;
+            padding: 1rem;
+
+            & > .head {
+                & > .userInfoCard {
+                    width: 100%;
+                    height: 100%;
+                    padding: 0.8rem;
+                    border-radius: 0.8rem;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 0.8rem;
+
+                    & > .img {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 0.6rem;
+                    }
+
+                    & > .info {
+                        width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+
+                        & > .user {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+
+                            & > .name {
+                                font-size: 1.3rem;
+                                font-weight: 700;
+                            }
+                            & > .email {
+                                font-size: 0.7rem;
+                            }
+                        }
+
+                        & > .expires {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+
+            & > .body {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+
+                & > .btn {
+                    width: 100%;
+                    height: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0.6rem;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+
+            & > .footer {
+                width: 80%;
+
+                & > .logout {
+                    width: 100%;
+                    height: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0.6rem;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
