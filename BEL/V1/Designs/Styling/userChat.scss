@@ -1,0 +1,241 @@
+@import "base.scss";
+
+// COLOR THEMES
+.dark {
+    & > .sub {
+        & > .head {
+            &> .userCard{
+                background: $darkBody;
+
+                &> .img{
+                    background: $imgSkeleton;
+                }
+
+                &> .user{
+                    color: $lightInput;
+                    &> .activity{
+                        &> .statusOnline{
+                            background: $success;
+                        }
+                    }
+                }
+
+                &> .notification{
+                    background-color: $accent;
+                }
+            }
+        }
+
+        &> .body{
+            &> .messageList{
+                &>.messageSent{
+                    background: $accent;
+                }
+                &>.messageReceived{
+                    background: $darkBody;
+                }
+            }
+        }
+
+        &> .footer{
+            &>.compose{
+                &> input{
+                    background: $darkBody;
+                }
+    
+                &>.send{
+                    background: $accent;
+                }
+            }
+        }
+    }
+}
+
+.light {
+    background: $lightBody;
+
+    & > .sub {
+        background: $lightContainer;
+        border-color: $accent !important;
+
+        & > .head {
+            &> .userCard{
+                background: $accent;
+
+                &> .img{
+                    background: $imgSkeleton;
+                }
+
+                &> .user{
+                    color: $darkInput;
+                    &> .activity{
+                        &> .statusOnline{
+                            background: $success;
+                        }
+                    }
+                }
+
+                &> .notification{
+                    background-color: $darkBody;
+                }
+            }
+        }
+
+        &> .body{
+            &> .messageList{
+                &>.messageSent{
+                    background: $accent;
+                }
+                &>.messageReceived{
+                    background: $lightBody;
+                }
+            }
+        }
+
+        &> .footer{
+            &> .compose{
+                &> input{
+                    background: $lightBody;
+                }
+    
+                &>.send{
+                    background: $accent;
+                }
+            } 
+        }
+    }
+}
+
+// STRUCTURE
+.container {
+    & > .box {
+        & > .sub {
+            justify-content: flex-start;
+            padding: 1rem;
+            gap:1rem;
+
+            & > .head {
+                width: 100%;
+                height: 100%;
+
+                &> .userCard{
+                    position: relative;
+                    width: 100%;
+                    height: 80px;
+                    padding: .5rem;         // .5rem == 8px
+                    border-radius: .6rem;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: .5rem;
+
+                    &> .img{
+                        width: 64px;
+                        height: 100%;
+                        border-radius: .6rem;
+                        grid-column: 1;
+                    }
+
+                    &> .user{
+                        width: 200px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        grid-column: 2;
+
+                        &> .name{
+                            font-size: 1.2rem;
+                            font-weight: 800;
+                        }
+
+                        &> .activity{
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+
+                            &> .statusOnline{
+                                width: .7rem;
+                                height: .7rem;
+                                border-radius: 50%;
+                                align-self: center;
+                            }
+
+                            &> .statusText{
+                                margin-left: .3rem;
+                                font-size: .7rem;
+                                align-self: center;
+                            }
+                        }
+                    }
+
+                    &> .notification{
+                        position: absolute;
+                        right: 5%;
+                        align-self: center;
+                        width: 1rem;
+                        height: 1rem;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            &> .body{
+                width: 100%;
+                height: 100%;
+
+                &> .messageList{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 1rem;
+
+                    &>.messageSent{
+                        width: 250px;
+                        height: 150px;
+                        align-self: flex-end;
+                        border-radius: .6rem;
+                    }
+
+                    &>.messageReceived{
+                        width: 250px;
+                        height: 150px;
+                        align-self: flex-start;
+                        border-radius: .6rem;
+                    }
+                }
+            }
+
+            &>.footer{
+                width: 100%;
+                height: 50px;
+
+                &> .compose{
+                    width: 100%;
+                    height: 50px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: .5rem;
+
+                    &> input{
+                        width:85%;
+                        height: 100%;
+                        border-radius: .6rem;
+                        border: none;
+                    }
+
+                    &> .send{
+                        width: 15%;
+                        height: 100%;
+                        border-radius: .6rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

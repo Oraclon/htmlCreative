@@ -1,0 +1,239 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dark {
+  background: #1f2124;
+}
+.dark > .sub {
+  background: #22262b;
+  border-color: #ffb31a !important;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container > .box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container > .box > .sub {
+  width: 400px;
+  height: 700px;
+  border: 1px solid;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.container > .box > .sub > .head {
+  width: 100%;
+  text-align: center;
+}
+.container > .box > .sub > .footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dark > .sub > .head > .userCard {
+  background: #1f2124;
+}
+.dark > .sub > .head > .userCard > .img {
+  background: #3c3c3c;
+}
+.dark > .sub > .head > .userCard > .user {
+  color: #f6f6f6;
+}
+.dark > .sub > .head > .userCard > .user > .activity > .statusOnline {
+  background: #31c149;
+}
+.dark > .sub > .head > .userCard > .notification {
+  background-color: #ffb31a;
+}
+.dark > .sub > .body > .messageList > .messageSent {
+  background: #ffb31a;
+}
+.dark > .sub > .body > .messageList > .messageReceived {
+  background: #1f2124;
+}
+.dark > .sub > .footer > .compose > input {
+  background: #1f2124;
+}
+.dark > .sub > .footer > .compose > .send {
+  background: #ffb31a;
+}
+
+.light {
+  background: #f6f6f6;
+}
+.light > .sub {
+  background: #ffffff;
+  border-color: #ffb31a !important;
+}
+.light > .sub > .head > .userCard {
+  background: #ffb31a;
+}
+.light > .sub > .head > .userCard > .img {
+  background: #3c3c3c;
+}
+.light > .sub > .head > .userCard > .user {
+  color: #282b2f;
+}
+.light > .sub > .head > .userCard > .user > .activity > .statusOnline {
+  background: #31c149;
+}
+.light > .sub > .head > .userCard > .notification {
+  background-color: #1f2124;
+}
+.light > .sub > .body > .messageList > .messageSent {
+  background: #ffb31a;
+}
+.light > .sub > .body > .messageList > .messageReceived {
+  background: #f6f6f6;
+}
+.light > .sub > .footer > .compose > input {
+  background: #f6f6f6;
+}
+.light > .sub > .footer > .compose > .send {
+  background: #ffb31a;
+}
+
+.container > .box > .sub {
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+.container > .box > .sub > .head {
+  width: 100%;
+  height: 100%;
+}
+.container > .box > .sub > .head > .userCard {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.container > .box > .sub > .head > .userCard > .img {
+  width: 64px;
+  height: 100%;
+  border-radius: 0.6rem;
+  grid-column: 1;
+}
+.container > .box > .sub > .head > .userCard > .user {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-column: 2;
+}
+.container > .box > .sub > .head > .userCard > .user > .name {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.container > .box > .sub > .head > .userCard > .user > .activity {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container > .box > .sub > .head > .userCard > .user > .activity > .statusOnline {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  align-self: center;
+}
+.container > .box > .sub > .head > .userCard > .user > .activity > .statusText {
+  margin-left: 0.3rem;
+  font-size: 0.7rem;
+  align-self: center;
+}
+.container > .box > .sub > .head > .userCard > .notification {
+  position: absolute;
+  right: 5%;
+  align-self: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+.container > .box > .sub > .body {
+  width: 100%;
+  height: 100%;
+}
+.container > .box > .sub > .body > .messageList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.container > .box > .sub > .body > .messageList > .messageSent {
+  width: 250px;
+  height: 150px;
+  align-self: flex-end;
+  border-radius: 0.6rem;
+}
+.container > .box > .sub > .body > .messageList > .messageReceived {
+  width: 250px;
+  height: 150px;
+  align-self: flex-start;
+  border-radius: 0.6rem;
+}
+.container > .box > .sub > .footer {
+  width: 100%;
+  height: 50px;
+}
+.container > .box > .sub > .footer > .compose {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.container > .box > .sub > .footer > .compose > input {
+  width: 85%;
+  height: 100%;
+  border-radius: 0.6rem;
+  border: none;
+}
+.container > .box > .sub > .footer > .compose > .send {
+  width: 15%;
+  height: 100%;
+  border-radius: 0.6rem;
+}/*# sourceMappingURL=userChat.css.map */
