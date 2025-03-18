@@ -1,0 +1,108 @@
+--scss--
+  *{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: "Play", sans-serif;
+}
+
+html, body{ display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; background: #1c2841; }
+
+@keyframes mymove
+{
+    from { width: 800px; }
+    to { width: 100%; }
+}
+
+@keyframes reveal
+{
+    from{width: 100%;}
+    to{ width: 800px;}
+}
+
+@keyframes mymove2
+{
+    from{ opacity: 100%; width: 100%; }
+    to{ opacity: 0; width: 0; display: none; }
+}
+
+@keyframes reveal2
+{
+    from { opacity: 0; width: 0; display: none; }
+    to{ opacity: 100%; width: 100%; }
+}
+
+.container
+{
+    width: 100%; height: 100%;
+    padding: .4rem;
+    overflow: hidden;
+    border: 1px solid yellow;
+    display: flex;
+    gap: .4rem;
+    position: relative;
+
+    & .testButton
+    {
+        position: absolute;
+        border-radius: .4rem;
+        background: green;
+        width: 60px; height: 60px;
+        bottom: 20px; left: 20px;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    & .galleryArea{ width: 800px; background: brown; border-radius: .4rem; position:relative;  overflow: hidden;
+        & img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    }
+    & .restBody{ width: 100%; background: purple; border-radius: .4rem; color: white; padding: .6rem; }
+
+    & .galleryArea.active{ animation: mymove .4s forwards ease-in-out; }
+    & .restBody.active{ animation: mymove2 .4s forwards ease-in-out; }
+
+    & .galleryArea.inactive{ animation: reveal .4s forwards ease-in-out; }
+    & .restBody.inactive{ animation: reveal2 .4s forwards ease-in-out; }
+}
+
+--scss--
+--html--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="testButton" id="testButton"></div>
+        <div class="galleryArea" id="galleryArea">
+            <img src="https://wallpapers.com/images/hd/modern-beautiful-house-x1yu28g8twzle26l.jpg" alt="">
+        </div>
+        <div class="restBody" id="restBody">this is a text</div>        
+    </div>
+    <script>
+        let testButton = document.getElementById("testButton");
+        let galleryArea = document.getElementById("galleryArea");
+        let restBody = document.getElementById("restBody");
+        
+        let isActive = false;
+
+        testButton.onclick = ()=>{
+            
+            isActive = !isActive;
+
+            let add = isActive ? "active" : "inactive";
+            let rem = isActive ? "inactive" : "active";
+                restBody.classList.add(add);
+                galleryArea.classList.add(add);
+           
+                restBody.classList.remove(rem);
+                galleryArea.classList.remove(rem);
+            }
+    </script>
+</body>
+</html>
+--html--
