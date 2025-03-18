@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="testButton" id="testButton"></div>
+        <div class="galleryArea" id="galleryArea">
+            <!--<img src="https://wallpapers.com/images/hd/modern-beautiful-house-x1yu28g8twzle26l.jpg" alt="">-->
+            <img src="https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div class="restBody" id="restBody">
+           <div class="head">header</div>
+           <div class="body">
+            
+                <div style="height: 1000px; background: red; border: 1px solid yellow;"></div>
+                <div style="height: 1000px; background: red; border: 1px solid yellow;"></div>
+        </div>
+           <div class="footer">footer</div> 
+        </div>        
+    </div>
+    <script>
+        let testButton = document.getElementById("testButton");
+        let galleryArea = document.getElementById("galleryArea");
+        let restBody = document.getElementById("restBody");
+        
+        let isActive = false;
+
+        testButton.onclick = ()=>{
+            
+            isActive = !isActive;
+
+            let add = isActive ? "active" : "inactive";
+            let rem = isActive ? "inactive" : "active";
+                restBody.classList.add(add);
+                galleryArea.classList.add(add);
+           
+                restBody.classList.remove(rem);
+                galleryArea.classList.remove(rem);
+            }
+    </script>
+</body>
+</html>
