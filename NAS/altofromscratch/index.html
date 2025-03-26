@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="filter.css">
+</head>
+<body>
+<div class="adiv"><div class="altocontainer" id="altocontainer">
+    <div class="alto" id="alto">
+       a 
+    </div>
+    <div class="altoList" id="altolist">
+        <div class="filterInput"></div>
+        <div class="filterResults" id="filterResults"></div>
+        <div class="filterButton">
+            <button>I am a button</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<button id="addnew">This is a button</button>
+<script>
+let items = [...Array(100).keys()];
+
+let alto = document.getElementById("alto");
+let altocontainer = document.getElementById("altocontainer");
+let altolist = document.getElementById("altolist");
+let filterResults = document.getElementById("filterResults");
+
+items.forEach(i=>{
+    let item = document.createElement("div");
+    item.classList.add("item");
+    item.innerHTML = i;
+    item.onclick=(e)=>{ 
+        alto.innerHTML = i; 
+        if(e.target.className == "item") 
+            altocontainer.classList.remove("active"); }
+    filterResults.appendChild(item);
+})
+
+altocontainer.onclick = (e)=>{
+    
+    if(e.target.className == "alto")
+        altocontainer.classList.add("active");
+}
+altolist.onmouseleave = ()=>{
+    altocontainer.classList.remove("active");
+}
+
+</script>
+</body>
+</html>
