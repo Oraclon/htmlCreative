@@ -1,0 +1,96 @@
+@use "./root";
+@use "./base";
+:root
+{
+    --inputHeight: 40px;
+    --inputWidth : 400px;
+    --altoListTop: var(--inputHeight);
+    --altoListHeight: 400px;
+    --borderRadius: .4rem;
+    --filterButtonView: none;
+    @media only screen and (max-width: 600px)
+    {
+        --inputWidth: 100%;
+        --altoListTop: 0;
+        --altoListHeight: calc(100vh);
+        --filterButtonView: block;
+    }
+}
+.adiv
+{
+    padding: 1rem;
+}
+.altocontainer
+{
+    position: relative;
+    width: var(--inputWidth);
+    border-radius: var(--borderRadius);
+
+    & .alto
+    {
+        height: var(--inputHeight);
+        width: 100%;
+        background: red;
+        overflow: hidden;
+        border-radius: var(--borderRadius);
+    }
+    & .altoList
+    {
+        position: absolute;
+        top: var(--altoListTop);
+        left: 0;
+        width: 100%;
+        height: var(--altoListHeight);
+        min-height: var(--altoListHeight);
+        background: yellowgreen;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: min-content auto min-content;
+        grid-template-columns: repeat(1, 1fr);
+        display: none;
+
+        & .filterInput
+        {
+            grid-row: 1;
+            background: orange;
+            height: var(--inputHeight);
+        }
+        & .filterResults
+        {
+            grid-row: 2;
+            height:100%;
+            background: blue;
+            padding: .6rem;
+            overflow-y: auto;
+            display: grid;
+            gap: .6rem;
+
+            & .item
+            {
+                padding: .6rem; background: green;
+                height: fit-content;
+                cursor: pointer;
+            }
+        }
+        & .filterButton
+        {
+            grid-row: 3;
+            padding: 1rem;
+            background: brown;
+            display: var(--filterButtonView);
+
+            & button
+            {
+                width: 100%;
+                padding: .4rem;
+            }
+        }
+    }
+}
+.altocontainer.active
+{
+    & .altoList
+    {
+        display: grid;
+    }
+}
