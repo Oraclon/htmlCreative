@@ -1,1 +1,119 @@
-adas
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="aContainer">
+        <div class="formContainer">
+           <form>
+            <div class="head">a</div>
+            <div class="body">
+                <fieldset>
+                    <legend>Altos</legend>
+                    <div class="inputContainer" id="test">
+                        <div class="alto active">
+                            <div class="altoSelections">
+                                <div class="selection">item a</div>
+                                <div class="selection">item a</div>
+                            </div>
+                            <input type="text" style="display: none;" id="testId">
+                            <div class="altoBody">
+                                <div class="altoFilter">a</div>
+                                <div class="altoList">
+                                    <div class="altoListItem">ase</div>
+                                    <div class="altoListItem active">ase</div>
+                                    <div class="altoListItem">ase</div>
+                                    <div class="altoListItem">ase</div>
+                                </div>
+                                <div class="altoButton">
+                                    <button type="button">Save Selections</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <!--#region [FS 1]-->
+                <fieldset>
+                    <legend>aa 1</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 1 1">
+                        <input type="text" placeholder="Input 1 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 1.3">
+                    </div>
+                <!--#endregion-->
+                <!--#region [FS 2]-->
+                </fieldset>
+                <fieldset>
+                    <legend>aa 2</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 1">
+                        <input type="text" placeholder="Input 2 2">
+                    </div>
+                     <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 3">
+                        <input type="text" placeholder="Input 2 4">
+                    </div>
+                     <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 5">
+                        <input type="text" placeholder="Input 2 6">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+                <!--#region [FS 3]-->
+                <fieldset>
+                    <legend>aa 3</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3 1">
+                        <input type="text" placeholder="Input 3 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.3">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.4">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.5">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+                <!--#region [FS 4]-->
+                <fieldset>
+                    <legend>aa 4</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4 1">
+                        <input type="text" placeholder="Input 4 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.3">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.4">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.5">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+            </div>
+            <div class="footer">
+                <button type="button">This is a button</button>
+            </div>
+           </form> 
+        </div>
+    </div>
+
+<script src="alto.js"></script>
+<script>
+    let alto = new Alto();
+    let test = document.getElementById("test");
+    test.appendChild(alto.body);
+</script>
+</body>
+</html>
