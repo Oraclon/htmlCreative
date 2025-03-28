@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="buttonsContainer">
+        <button type="button" onclick="revealAlto(0)">Alto</button>
+        <button type="button" onclick="revealAlto(1)">Range</button>
+        <button type="button" onclick="revealAlto(2)">Live</button>
+        <button type="button" onclick="revealAlto(3)">Clear</button>
+    </div>
+    <div class="aContainer dark">
+        <div class="formContainer">
+           <form>
+            <div class="head">a</div>
+            <div class="body">
+                <fieldset>
+                    <legend>Altos</legend>
+                    <div class="inputContainer">
+                        <!--#region [Single Alto]-->
+                        <div class="alto" id="singleAlto">
+                            <div class="altoSelections">
+                                <div class="selection">item a</div>
+                                <div class="selection">item a</div>
+                            </div>
+                            <input type="text" style="display: none;" id="testId">
+                            <div class="altoBody single">
+                                <div class="altoFilter">a</div>
+                                <div class="altoList">
+                                    <div class="altoListItem">ase</div>
+                                    <div class="altoListItem active">ase</div>
+                                    <div class="altoListItem">ase</div>
+                                    <div class="altoListItem">ase</div>
+                                </div>
+                                <div class="altoButton">
+                                    <button type="button">Save Selections</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--#endregion-->
+                        <!--#region [Range Alto]-->
+                        <div class="alto" id="rangeAlto">
+                            <div class="altoSelections"></div>
+                            <input type="text" style="display: none;">
+                            <div class="altoBody range">
+                                <div class="rangeArea">
+                                   <div class="rangeTitle">From</div>
+                                   <div class="rangeBody">
+                                        <div class="testItem"></div>
+                                        <div class="testItem"></div>
+                                        <div class="testItem"></div>
+                                   </div> 
+                                </div>
+                                <div class="rangeArea">
+                                    <div class="rangeTitle">To</div>
+                                    <div class="rangeBody">
+                                            <div class="testItem"></div>
+                                            <div class="testItem"></div>
+                                            <div class="testItem"></div>
+                                    </div> 
+                                </div>
+                                <div class="buttonsArea">asd</div>
+                            </div>
+                        </div>
+                        <!--#endregion-->
+                        <!--#region [Live Alto]-->
+                        <div class="alto" id="liveAlto">
+                            <div class="altoSelections"></div>
+                            <input type="text" style="display: none;">
+                            <div class="altoBody dynamic">
+                                <div class="filterInput">Input</div>
+                                <div class="filterBodyandSelections">
+                                   <div class="resultsContainer"></div>
+                                   <div class="resultsContainer"></div> 
+                                </div>
+                                <div class="saveSelections">Button</div>
+                            </div>
+                        </div>
+                        <!--#endregion-->
+                    </div>
+                </fieldset>
+                <!--#region [FS 1]-->
+                <fieldset>
+                    <legend>aa 1</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 1 1">
+                        <input type="text" placeholder="Input 1 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 1.3">
+                    </div>
+                <!--#endregion-->
+                <!--#region [FS 2]-->
+                </fieldset>
+                <fieldset>
+                    <legend>aa 2</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 1">
+                        <input type="text" placeholder="Input 2 2">
+                    </div>
+                     <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 3">
+                        <input type="text" placeholder="Input 2 4">
+                    </div>
+                     <div class="inputContainer">
+                        <input type="text" placeholder="Input 2 5">
+                        <input type="text" placeholder="Input 2 6">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+                <!--#region [FS 3]-->
+                <fieldset>
+                    <legend>aa 3</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3 1">
+                        <input type="text" placeholder="Input 3 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.3">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.4">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 3.5">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+                <!--#region [FS 4]-->
+                <fieldset>
+                    <legend>aa 4</legend>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4 1">
+                        <input type="text" placeholder="Input 4 2">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.3">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.4">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" placeholder="Input 4.5">
+                    </div>
+                </fieldset>
+                <!--#endregion-->
+            </div>
+            <div class="footer">
+                <button type="button">This is a button</button>
+            </div>
+           </form> 
+        </div>
+    </div>
+
+<script src="alto.js"></script>
+<script>
+    let singleAlto = document.getElementById("singleAlto");
+    let multiAlto  = document.getElementById("rangeAlto");
+    let liveAlto   = document.getElementById("liveAlto");
+
+    const revealAlto = (trigger) =>
+    {
+        [singleAlto, multiAlto, liveAlto].map(x=> x.classList.remove("active"));
+
+        switch(trigger)
+        {
+            case 0:
+                singleAlto.classList.add("active");
+                break;
+            case 1:
+                multiAlto.classList.add("active");
+                break;
+            case 2:
+                liveAlto.classList.add("active");
+                break;
+            default: break;
+        }
+    }
+
+/*    let alto = new Alto();
+let alto1 = new Alto();
+    let test = document.getElementById("test");
+    test.appendChild(alto.body);
+    test.appendChild(alto1.body);
+    */
+</script>
+</body>
+</html>
