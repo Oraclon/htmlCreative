@@ -16,6 +16,10 @@ html, body
     font-family: "Play", sans-serif;
     font-weight: 400;
     font-style: normal;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 /* width */
 ::-webkit-scrollbar {
@@ -38,3 +42,10 @@ html, body
   background: #555; 
 }
 * { box-sizing: border-box; }
+
+app-notifications
+{
+    position: absolute;
+    right: 0; bottom: 0;
+    cursor: pointer;
+}

@@ -1,25 +1,31 @@
 
 $padGap: .4rem;
-
+@keyframes gkarAnimation
+{
+    0%{ opacity: 100%; }
+    50% { opacity: 0; }
+    100%{ opacity: 100%; }
+}
 .addNewTask
 {
     position: absolute;
     right: 20px;
     bottom: 20px;
-    width: 60px; height: 60px;
+    width: 40px; height: 40px;
     background: var(--defaultColor);
     border-radius: 50%;
     cursor: pointer;
 }
 .mainContainer
 {
+    position: relative;
     display: grid;
     //grid-template-rows: min-content auto;
     grid-template-rows: auto;
     grid-template-columns: repeat(1, 1fr);
     gap: $padGap;
     height: 100%;
-    position: relative;
+    overflow: hidden;
     
     /*.headerContainer
     {
@@ -129,6 +135,11 @@ $padGap: .4rem;
     gap: $padGap;
     height: fit-content;
 
+    &:focus
+    {
+        cursor: grabbing;
+    }
+
     & > .taskHead
     {
         grid-row: 1;
@@ -137,7 +148,12 @@ $padGap: .4rem;
         justify-content: space-between;
         font-size: .6em;
 
-        & > .taskId { font-weight: 700; }
+        & > .taskId { font-weight: 700;
+            display: flex;
+            gap: $padGap;
+            align-items: center;
+            justify-content: center;
+        }
     }
     &> .taskBody
     {
@@ -152,6 +168,23 @@ $padGap: .4rem;
 .task.finished
 {
     border-bottom: 2px solid green;
+}
+
+.severity
+{
+    width: 6px; height: 6px;
+    background: var(--defaultColor);
+    border-radius: 50%;
+    
+}
+.severity.medium
+{
+    background: orange;
+}
+.severity.high
+{
+    background: red;
+    animation: gkarAnimation .8s ease-in infinite;
 }
 //#endregion
 
@@ -181,3 +214,5 @@ $padGap: .4rem;
     border: 2px solid orange;
 }
 //#endregion
+
+
