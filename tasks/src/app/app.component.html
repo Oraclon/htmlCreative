@@ -1,0 +1,31 @@
+<div class="mainContainer">
+  <!--<div class="headerContainer">
+      <div>aasd</div>
+      <div>bbsd</div>
+  </div>-->
+  <div class="bodyContainer">
+      <div class="projectsContainer">
+         <div class="projectsLst">
+          <div [ngClass]="[project.selected? 'project active':'project']" (click)="loadProject(project)" *ngFor="let project of projects">
+            <div class="projectHead">Proj-{{project.id}}</div>
+            <div class="projectBody">{{project.name}}</div>
+          </div>
+
+         </div>
+         <button (click)="addNewProject()">Add Project</button> 
+      </div>
+      <div class="projectTasks">
+          <div class="projectTaskContainer" *ngFor="let status of statuses"  (dragover)="onDragOver($event)" (drop)="onDrop($event, status)">
+            <div class="task" draggable="true" *ngFor="let task of filterData(status)" (dragstart)="onDrag(task)"
+            [ngClass]="[task.status == statusLocs.Started ? 'task working':'task', task.status == statusLocs.Finished? 'task finished':'task']">
+              <div class="taskHead">
+                <div class="taskId">{{task.value}}</div>
+                <div class="taskCreated">{{task.value}}</div>
+              </div>
+              <div class="taskBody">This is a test  This is a testThis is</div> 
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="addNewTask" (click)="addNewTask()"></div>
+</div>

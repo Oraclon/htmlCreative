@@ -1,0 +1,183 @@
+
+$padGap: .4rem;
+
+.addNewTask
+{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 60px; height: 60px;
+    background: var(--defaultColor);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mainContainer
+{
+    display: grid;
+    //grid-template-rows: min-content auto;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: $padGap;
+    height: 100%;
+    position: relative;
+    
+    /*.headerContainer
+    {
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: $padGap;
+        gap: $padGap;
+        background: green;
+    }*/
+    .bodyContainer
+    {
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: min-content auto;
+        grid-template-rows: repeat(1, 1fr);
+        gap: $padGap;
+        padding: $padGap;
+        height: 100%;
+        overflow: hidden;
+
+        .projectsContainer
+        {
+            grid-column: 1;
+            padding: $padGap;
+            background: var(--container);
+            display: grid;
+            grid-template-rows: auto min-content;
+            grid-template-columns: repeat(1, 1f);
+            height: 100%;
+            overflow: hidden;
+            gap: $padGap;
+            border-radius: var(--borderRadius);
+
+            .projectsLst
+            {
+                grid-row: 1;
+                display: grid;
+                align-content: start;
+                gap: $padGap;
+                width: 400px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                height: 100%;
+                background: var(--body);
+                border-radius: var(--borderRadius);
+                padding: $padGap;
+            }
+            & > button
+            {
+                grid-row: 2;
+                background: var(--defaultColor);
+                color: var(--color);
+                border: none; outline: none;
+                padding: .6rem;
+                border-radius: var(--borderRadius);
+                cursor: pointer;
+
+                &:focus
+                {
+                    border: none; outline: none;
+                }
+            }
+
+        }
+        .projectTasks
+        {
+            grid-column: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: $padGap;
+            overflow: hidden;
+            padding: $padGap;
+            background: var(--container);
+            border-radius: var(--borderRadius);
+
+            .projectTaskContainer
+            {
+                display: grid;
+                align-content: start;
+                overflow-y: auto;
+                padding: $padGap; 
+                gap: $padGap;
+                background: var(--body);
+                //border-radius: var(--borderRadius);
+            }
+        }
+    }
+}
+
+//#region [Task]
+.task
+{
+    position: relative;
+    padding: 1rem; 
+    background: var(--container);
+    color: var(--color);
+    //border-radius: var(--borderRadius);
+    cursor: pointer;
+    border-bottom: 2px solid var(--defaultColor);
+   
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: $padGap;
+    height: fit-content;
+
+    & > .taskHead
+    {
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: .6em;
+
+        & > .taskId { font-weight: 700; }
+    }
+    &> .taskBody
+    {
+        grid-row:2;
+        font-size: .8em;
+    }
+}
+.task.working
+{
+    border-bottom: 2px solid orange;
+}
+.task.finished
+{
+    border-bottom: 2px solid green;
+}
+//#endregion
+
+//#region [Project]
+.project
+{
+    padding: 1rem;
+    background: var(--container);
+    border-radius: var(--borderRadius);
+    color: var(--color);
+    cursor: pointer;
+    display: flex; flex-direction: column;
+    gap: .8rem;
+
+    &>.projectHead
+    {
+        font-size: .6em;
+        font-weight: 700;
+    }
+    &>.projectBody
+    {
+        font-size: .8em;
+    }
+}
+.project.active
+{
+    border: 2px solid orange;
+}
+//#endregion
