@@ -18,17 +18,7 @@
       </div>
       <div class="projectTasks" *ngIf="tasks().length > 0">
           <div class="projectTaskContainer" *ngFor="let status of statuses"  (dragover)="onDragOver($event)" (drop)="onDrop($event, status)">
-            <div class="task" draggable="true" *ngFor="let task of filterData(status)" (dragstart)="onDrag(task)"
-            [ngClass]="[task.status == statusLocs.Started ? 'task working':'task', task.status == statusLocs.Finished? 'task finished':'task']">
-              <div class="taskHead">
-                <div class="taskId">
-                  <div class="severity" [ngClass]="[task.severity == severity.Medium? 'medium':'', task.severity == severity.High? 'high':'']"></div>
-                  <div class="id">Task-{{task.id}}</div>
-                </div>
-                <div class="taskCreated">{{task.value}}</div>
-              </div>
-              <div class="taskBody">This is a test  This is a testThis is {{task.id}}</div> 
-            </div>
+            <app-task-item [task]="task"  *ngFor="let task of filterData(status)" (dragstart)="onDrag(task)"></app-task-item>
           </div>
       </div>
   </div>

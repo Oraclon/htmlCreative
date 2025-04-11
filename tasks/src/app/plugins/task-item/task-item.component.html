@@ -1,0 +1,11 @@
+<div class="task" draggable="true"
+[ngClass]="[task.status == statusLocs.Started ? 'task working':'task', task.status == statusLocs.Finished? 'task finished':'task']">
+    <div class="taskHead">
+    <div class="taskId">
+        <div class="severity" [ngClass]="[task.severity == severity.Medium? 'medium':'', task.severity == severity.High? 'high':'']"></div>
+        <div class="id">Task-{{task.id}}</div>
+    </div>
+    <div class="taskCreated">{{task.value}}</div>
+    </div>
+    <div class="taskBody">This is a test  This is a testThis is {{task.id}}</div> 
+</div>
