@@ -1,0 +1,131 @@
+@keyframes gkarAnimation {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.addNewTask {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--defaultColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mainContainer {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.4rem;
+  height: 100%;
+  overflow: hidden;
+  /*.headerContainer
+  {
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding: $padGap;
+      gap: $padGap;
+      background: green;
+  }*/
+}
+.mainContainer .bodyContainer {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 0.4rem;
+  padding: 0.4rem;
+  height: 100%;
+  overflow: hidden;
+}
+.mainContainer .bodyContainer .projectsContainer {
+  grid-column: 1;
+  padding: 0.4rem;
+  background: var(--container);
+  display: grid;
+  grid-template-rows: auto min-content;
+  grid-template-columns: repeat(1, 1f);
+  height: 100%;
+  overflow: hidden;
+  gap: 0.4rem;
+  border-radius: var(--borderRadius);
+}
+.mainContainer .bodyContainer .projectsContainer .projectsLst {
+  grid-row: 1;
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  width: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  background: var(--body);
+  border-radius: var(--borderRadius);
+  padding: 0.4rem;
+}
+.mainContainer .bodyContainer .projectsContainer > button {
+  grid-row: 2;
+  background: var(--defaultColor);
+  color: var(--color);
+  border: none;
+  outline: none;
+  padding: 0.6rem;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+}
+.mainContainer .bodyContainer .projectsContainer > button:focus {
+  border: none;
+  outline: none;
+}
+.mainContainer .bodyContainer .projectTasks {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 0.4rem;
+  overflow: hidden;
+  padding: 0.4rem;
+  background: var(--container);
+  border-radius: var(--borderRadius);
+}
+.mainContainer .bodyContainer .projectTasks .projectTaskContainer {
+  display: grid;
+  align-content: start;
+  overflow-y: auto;
+  padding: 0.4rem;
+  gap: 0.4rem;
+  background: var(--body);
+}
+
+.project {
+  padding: 1rem;
+  background: var(--container);
+  border-radius: var(--borderRadius);
+  color: var(--color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.project > .projectHead {
+  font-size: 0.6em;
+  font-weight: 700;
+}
+.project > .projectBody {
+  font-size: 0.8em;
+}
+
+.project.active {
+  border: 2px solid orange;
+}/*# sourceMappingURL=app.component.css.map */

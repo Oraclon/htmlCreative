@@ -1,0 +1,59 @@
+.task {
+  position: relative;
+  padding: 1rem;
+  background: var(--container);
+  color: var(--color);
+  cursor: pointer;
+  border-bottom: 2px solid var(--defaultColor);
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.4rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.task:focus {
+  cursor: grabbing;
+}
+.task > .taskHead {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.6em;
+}
+.task > .taskHead > .taskId {
+  font-weight: 700;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+}
+.task > .taskBody {
+  grid-row: 2;
+  font-size: 0.8em;
+}
+
+.task.working {
+  border-bottom: 2px solid orange;
+}
+
+.task.finished {
+  border-bottom: 2px solid green;
+}
+
+.severity {
+  width: 6px;
+  height: 6px;
+  background: var(--defaultColor);
+  border-radius: 50%;
+}
+
+.severity.medium {
+  background: orange;
+}
+
+.severity.high {
+  background: red;
+  animation: gkarAnimation 0.8s ease-in infinite;
+}/*# sourceMappingURL=task-item.component.css.map */

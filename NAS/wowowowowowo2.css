@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Play", sans-serif;
+}
+
+html, body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #1c2841;
+}
+
+@keyframes mymove {
+  from {
+    width: 600px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes reveal {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 800px;
+  }
+}
+@keyframes mymove2 {
+  from {
+    opacity: 100%;
+    width: 100%;
+  }
+  to {
+    opacity: 0;
+    width: 0;
+    display: none;
+  }
+}
+@keyframes reveal2 {
+  from {
+    opacity: 0;
+    width: 0;
+    display: none;
+  }
+  to {
+    opacity: 100%;
+    width: 100%;
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid yellow;
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  position: relative;
+  box-sizing: border-box;
+}
+.container .testButton {
+  position: absolute;
+  border-radius: 0.4rem;
+  background: rgb(232, 81, 0);
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+.container .galleryArea {
+  width: 800px;
+  background: brown;
+  border-radius: 0.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.container .galleryArea img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.container .restBody {
+  width: 100%;
+  color: white;
+  overflow-y: auto;
+  background: purple;
+  border-radius: 0.4rem;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: repeat(1, 1fr);
+}
+.container .restBody .head {
+  grid-row: 1;
+  padding: 1rem;
+  background: orange;
+  position: sticky;
+  top: 0;
+}
+.container .restBody .body {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container .restBody .footer {
+  grid-row: 3;
+  padding: 1rem;
+  background: blue;
+  position: sticky;
+  bottom: 0;
+}
+.container .galleryArea.active {
+  animation: mymove 0.4s forwards ease-in-out;
+}
+.container .restBody.active {
+  animation: mymove2 0.4s forwards ease-in-out;
+}
+.container .galleryArea.inactive {
+  animation: reveal 0.4s forwards ease-in-out;
+}
+.container .restBody.inactive {
+  animation: reveal2 0.4s forwards ease-in-out;
+}
+
+@keyframes reveal-gallery-mobile {
+  from {
+    height: 70vh;
+    min-height: 70vh;
+  }
+  to {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+@keyframes reset-gallery-mobile {
+  from {
+    height: 100%;
+    min-height: 100%;
+  }
+  to {
+    height: 70vh;
+    min-height: 70vh;
+  }
+}
+@keyframes hide-restbody-mobile {
+  from {
+    height: 100%;
+    opacity: 100%;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes reset-restbody-mobile {
+  from {
+    height: 0;
+  }
+  to {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .container .galleryArea {
+    height: 80vh;
+    min-height: 80vh;
+    width: 100% !important;
+  }
+  .container .restBody {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .container .galleryArea.active {
+    animation: reveal-gallery-mobile 0.4s forwards ease-in-out;
+  }
+  .container .restBody.active {
+    animation: hide-restbody-mobile 0.4s forwards ease-in-out;
+  }
+  .container .galleryArea.inactive {
+    animation: reset-gallery-mobile 0.4s forwards ease-in-out;
+  }
+  .container .restBody.inactive {
+    animation: reset-resetbody-mobile 0.4s forwards ease-in-out;
+  }
+}/*# sourceMappingURL=wowowowowowo2.css.map */

@@ -1,0 +1,161 @@
+.aContainer {
+  width: 100%;
+  height: 100%;
+}
+.aContainer .formContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 600px;
+  background: brown;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+.aContainer .formContainer form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: repeat(1, 1fr);
+}
+.aContainer .formContainer form > div {
+  padding: 1rem;
+}
+.aContainer .formContainer form > .head {
+  grid-row: 1;
+}
+.aContainer .formContainer form > .body {
+  grid-row: 2;
+  height: 100%;
+  overflow-y: auto;
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+.aContainer .formContainer form > .body > fieldset {
+  border: 1px solid blue;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  align-content: start;
+}
+.aContainer .formContainer form > .footer {
+  grid-row: 3;
+}
+.aContainer .formContainer form > .footer > button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+}
+.aContainer .formContainer form > .footer > button:focus {
+  border: none;
+  outline: none;
+}
+
+.alto {
+  width: 100%;
+  height: 40px;
+  max-height: 40px;
+  background: rgb(97, 24, 24);
+}
+.alto > .altoSelections {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 0.2rem;
+  justify-content: start;
+  padding: 0.2rem;
+}
+.alto > .altoSelections > .selection {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.4rem;
+  background: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.alto > .altoBody {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: blue;
+  display: none;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: repeat(1, 1fr);
+}
+.alto > .altoBody > div {
+  padding: 1rem;
+}
+.alto > .altoBody > .altoFilter {
+  grid-row: 1;
+}
+.alto > .altoBody > .altoList {
+  grid-row: 2;
+  height: 100%;
+  overflow-y: auto;
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  font-weight: 100;
+}
+.alto > .altoBody > .altoList > .altoListItem {
+  padding: 0.6rem;
+  background: green;
+  color: white;
+  cursor: pointer;
+}
+.alto > .altoBody > .altoList > .altoListItem.active {
+  background: yellowgreen;
+}
+.alto > .altoBody > .altoButton {
+  grid-row: 3;
+}
+.alto > .altoBody > .altoButton > button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+}
+.alto > .altoBody > .altoButton > button:focus {
+  border: none;
+  outline: none;
+}
+
+.alto.active .altoBody {
+  display: grid;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 0.4rem;
+  width: 100%;
+}
+.inputContainer > input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0.6rem;
+}
+.inputContainer > input:focus {
+  border: none;
+  outline: none;
+}
+
+.testItem {
+  width: 100%;
+  height: 400px;
+  background: rgb(56, 56, 163);
+}/*# sourceMappingURL=alto.css.map */
