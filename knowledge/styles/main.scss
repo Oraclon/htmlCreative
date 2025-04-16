@@ -1,0 +1,139 @@
+@use "./elements";
+
+.knowledgeContainer
+{
+    position: relative;
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: min-content auto;
+    gap: var(--padGap);
+    padding: var(--padGap);
+
+    &>.filtersContainer,
+    &>.knowledgeItemsContainer,
+    &>.knowledgeItemViewer
+    {
+        background: var(--container);
+        border-radius: var(--borderRadius);
+        padding: var(--padGap);
+    }
+
+    &>.knowledgeItemsContainer,
+    &>.knowledgeItemViewer
+    {
+        position: relative;
+        display: grid;
+        grid-column: 2;
+        gap: var(--padGap);
+        color: var(--color);
+
+        &.hidden
+        {
+            display: none;
+        }
+    }
+
+    & > .filtersContainer
+    {
+        grid-column: 1;
+        min-width: 16vw;
+        display: grid;
+        grid-template-rows: min-content auto;
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--padGap);
+
+        & > .filterItems{ grid-row: 1; }
+        & > .tagsContainer{ 
+            grid-row: 2; 
+            display: flex; 
+            gap: var(--padGap); 
+            flex-wrap: wrap; 
+            overflow-y: auto; 
+            align-content: start;
+        }
+    }
+    & > .knowledgeItemsContainer
+    {
+        grid-template-columns: repeat(4, 1fr);
+        align-content: start;
+        overflow-y: auto;
+    }
+    & > .knowledgeItemViewer
+    {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: min-content min-content auto min-content;
+        
+        & > div { padding: var(--padGap); }
+
+        & > .head
+        {
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: min-content  auto min-content;
+            grid-template-rows: repeat(1, 1fr);
+            gap: 2rem;
+            align-items: center;
+
+            & > .itemTitleAndReference
+            {
+                border-left: 2px solid var(--color); 
+                padding-left: 2rem;
+
+                & > .itemTitle
+                {
+                    margin-bottom: .6rem;
+                    font-weight: 700;
+                    font-size: 1.2em;
+            
+                }
+                & > .itemReference
+                {
+                    font-size: .8em;
+                }
+            }
+        }
+        & > .tags
+        {
+            display: flex;
+            width: fit-content;
+            gap: var(--padGap);
+            background: var(--body);
+            border-radius: var(--borderRadius);
+        }
+        & > .body
+        {
+            grid-row: 3;
+            display: grid;
+            align-content: start;
+            grid-auto-rows: min-content;
+            gap: var(--padGap);
+            overflow-y: auto;
+        }
+        & > .footer
+        {
+            grid-row: 4;
+            display: flex;
+            gap: var(--padGap);
+        }
+    }
+}
+.formContainer
+{
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(15,15,15,.4);
+
+    .formBody
+    {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 600px;
+        padding: 1rem;
+        background: var(--container);
+        border-radius: var(--borderRadius);
+    }
+}
