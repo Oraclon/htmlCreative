@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="knowledgeContainer">
+        <div class="filtersContainer">
+            <div class="filterItems">
+                <input type="text" placeholder="Filter Items">
+            </div>
+            <div class="tagsContainer">
+                <div class="tagItem">LSP</div>
+                <div class="tagItem">Nvim</div>
+                <div class="tagItem">Angular</div>
+                <div class="tagItem">Python</div>
+                <div class="tagItem">Dap</div>
+                <div class="tagItem">Lua</div>
+            </div>
+        </div>
+        <div class="knowledgeItemsContainer" id="containerView">
+
+            <div class="knowledgeItem" onclick="changeView()">
+                <div class="knowledgeHeader">
+                    This is a demo title to explain
+                </div>
+                <div class="knowledgeTags">
+                    <div class="tagItem">LSP</div>
+                    <div class="tagItem">Lua</div>
+                   <div class="tagItem">Angular</div> 
+                </div>
+            </div>
+            
+            <div class="actionButton">a</div>
+        </div>
+        <div class="knowledgeItemViewer hidden" id="itemsView">
+            <div class="head">
+                <div class="interaction" onclick="changeView()">Back</div>
+                <div class="itemTitleAndReference">
+                    <div class="itemTitle">This is a test Title</div>
+                    <div class="itemReference">Reference: #0001</div>
+                </div>
+                <button class="orange">Edit</button>
+            </div>
+            <div class="tags">
+                <div class="tagItem">LSP</div>
+                <div class="tagItem">Lua</div>
+                <div class="tagItem">Angular</div>
+            </div>
+            <div class="body">
+                <div class="actionStep" draggable="true" ondblclick="sayHi()">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>               
+                <div class="actionStep" draggable="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+                <div class="actionStep" draggable="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+                <div class="actionStep" draggable="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+                <div class="actionStep" draggable="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+                <div class="actionStep" draggable="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+            </div>
+            <div class="footer">
+                <button>Install</button>
+                <button class="orange">Download</button>
+            </div>
+        </div>
+
+        <div class="formContainer">
+            <div class="formBody">
+                <!--<form>
+                    <textarea></textarea> 
+                    <button>Test</button>
+                </form>-->
+                <!--<form>
+                    <input type="text">
+                    <input type="text">
+                    <button>Save Item</button>
+                </form>-->
+            </div>
+        </div>
+    </div>
+    <script>
+        function sayHi()
+        {
+            alert(1)
+        }
+        let viewIsOpen = false;
+        let containerView = document.getElementById("containerView");
+        let itemsView = document.getElementById("itemsView");
+        function changeView()
+        {
+            viewIsOpen = !viewIsOpen;
+            if(viewIsOpen)
+            {
+                containerView.classList.add("hidden");
+                itemsView.classList.remove("hidden");
+            }
+            else
+            {
+                containerView.classList.remove("hidden");
+                itemsView.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
