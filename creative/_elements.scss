@@ -1,0 +1,187 @@
+:root {
+    --body: #1f2124;
+    --container: #22262b;
+    --input: #282b2f;
+    --color: #ffffff;
+    --defaultColor: #1868db;
+    --accent: orange;
+    --borderRadius: .6rem;
+    --padGap: .6rem;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: var(--body);
+    margin: 0;
+    padding: 0;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    user-select: none;
+}
+
+*{ box-sizing: border-box; overflow: hidden; }
+
+.tagItem
+{
+    padding: .4rem .6rem;
+    border-radius: var(--borderRadius);
+    font-size: .8em;
+    background: var(--defaultColor);
+    color: var(--color);
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+input,
+textarea,
+button
+{
+    width: 100%;
+    padding: .8rem;
+    outline: none;
+    border: none;
+    color: var(--color);
+    border-radius: var(--borderRadius);
+
+    &:focus
+    {
+        outline: none;
+        border: none;
+    }
+}
+
+textarea
+{
+    height: fit-content;
+    resize: none;
+    &.huge{
+        min-height: 200px;
+    }
+}
+
+input,textarea
+{
+    background: var(--input);
+}
+button
+{
+    background: var(--defaultColor);
+    font-weight: 700;
+    cursor: pointer;
+
+    &.orange
+    {
+        background: var(--accent);
+        max-width: 200px;
+    }
+}
+form{
+    display: grid;
+    align-content: start;
+    gap: var(--padGap);
+    grid-auto-rows: min-content;
+}
+fieldset
+{
+    &>legend
+    {
+        color: var(--color);
+        font-weight: 700;
+    }
+    display: grid;
+    align-content: start;
+    gap: var(--padGap);
+    padding: var(--padGap);
+    border: .4px solid var(--accent);
+    border-radius: var(--borderRadius);
+}
+
+.interaction
+{
+    transition: .4s ease;
+    cursor: pointer;
+
+    &:hover
+    {
+        color: var(--accent);
+    }
+}
+
+.knowledgeItem
+{
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--padGap);
+    border-radius: var(--borderRadius);
+    background: var(--body);
+    border: 1px solid var(--body);
+    color: var(--color);
+    font-weight: 700;
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: 1rem;
+    transition: .4s ease;
+
+    &:hover
+    {
+        border: 1px solid orange;
+    }
+
+    .knowledgeHeader
+    {
+        grid-row: 1;   
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .knowledgeTags
+    {
+        grid-row: 2;
+        display: flex;
+        gap: var(--padGap);
+        flex-wrap: wrap;
+        font-size: .5em;
+    }
+}
+
+.actionStep
+{
+    padding: 1.5rem;
+    background: var(--body);
+    border-radius: var(--borderRadius);
+    color: var(--color);
+    font-size: 1em;
+}
+
+.actionButton
+{
+    position: absolute;
+    bottom: 1rem; right: 1rem;
+    width: 50px; height: 50px;
+    background: var(--defaultColor);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.actionStep
+{
+    padding: 1.5rem;
+    background: var(--body);
+    border-radius: var(--borderRadius);
+    color: var(--color);
+    font-size: 1em;
+    cursor: grab;
+
+    &:active
+    {
+        cursor: grabbing;
+    }
+}
