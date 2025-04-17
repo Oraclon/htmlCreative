@@ -1,0 +1,121 @@
+<!--<style>
+    pre {
+      font-family: 'Consolas', monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    pre code {
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f7f7f7;
+      border-radius: 4px;
+    }
+    span.token.keyword {
+      color: #0097a7;
+    }
+    span.token.selector {
+      color: #f92672;
+    }
+    span.token.string {
+      color: #d19a66;
+    }
+    span.token.number {
+      color: #ae81ff;
+    }
+    span.token.operator {
+      color: #66d9ef;
+    }
+    span.token.property {
+      color: #a6e22e;
+    }
+    span.token.function {
+      color: #a6e22e;
+    }
+    span.token.class {
+      color: #a6e22e;
+    }
+    span.token.id {
+      color: #a6e22e;
+    }
+    span.token.attribute {
+      color: #a6e22e;
+    }
+    span.token.boolean {
+      color: #66d9ef;
+    }
+  </style>
+  
+  <pre>
+  <span class="token keyword">let</span> <span class="token identifier">x</span> = <span class="token number">5</span>;
+  <span class="token keyword">let</span> <span class="token identifier">y</span> = <span class="token number">10</span>;
+  <span class="token keyword">console</span>.<span class="token method">log</span>(<span class="token string">'Hello World!'</span>);
+  </pre>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/prism.css" rel="stylesheet" />
+    <script src="js/prism.js"></script>
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    -->
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/prism.css">
+    <style>
+        html, body
+        {
+            margin: 0; padding: 0;
+            position: relative;
+            width: 100%; height: 100%;
+            background: var(--body);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        *{box-sizing: border-box;}
+        pre {
+            background-color: var(--container) !important;
+            /*padding: 1em !important;*/ /* Adjust padding as necessary */
+            margin: 0 !important;  /* Remove margin completely */
+            overflow-x: auto !important;
+            border-radius: 6px !important;
+            white-space: pre-line !important; /* Allow wrapping without leading spaces */
+            display: inline-block;
+        }
+
+        pre code {
+            display: inline-block !important;
+            color: #f8f8f2 !important;
+            font-family: 'Fira Code', 'Courier New', monospace !important;
+            font-size: 0.95em !important;
+            line-height: 1 !important;
+            margin: 0 !important; /* Remove any margin around the code */
+            padding: 0 1rem !important; /* Remove padding inside the code block */
+            white-space: pre-wrap !important; /* Ensure text wraps correctly */
+            margin-left: -100px !important;
+        }
+
+
+    </style>
+</head>
+<body>
+    <pre>
+        <code class="language-javascript">
+            const test = ()=>{ 
+                let items = 0;
+                for(let x = 0; x < 1000; x++)
+                {
+                    items = `Hi-${x}`;
+                }
+                return items;                
+             }
+        </code>
+    </pre>
+</body>
+</html>
