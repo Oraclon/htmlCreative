@@ -24,7 +24,7 @@
         </div>
         <!--#endregion-->
         <!--#region [Current Wind]-->
-        <div class="currentBlock wind">
+        <div class="currentBlock extras">
             <div class="block">
                 <div class="icon">Wind Speed</div>
                 <div class="text">v</div>
@@ -41,6 +41,23 @@
                 <div class="icon">Humidity</div>
                 <div class="text">v</div>
             </div>
+            <div class="block">
+                <div class="icon">Humidity</div>
+                <div class="text">v</div>
+            </div>
+            <div class="block">
+                <div class="icon">Humidity</div>
+                <div class="text">v</div>
+            </div>
+            <div class="block">
+                <div class="icon">Humidity</div>
+                <div class="text">v</div>
+            </div>
+            <div class="block">
+                <div class="icon">Humidity</div>
+                <div class="text">v</div>
+            </div>
+            
         </div>
         <!--#endregion-->
     </div>
@@ -48,8 +65,8 @@
         <!--#region [Forecast Week]-->
         <div class="containerBlock forecastLst">
             <div class="head">
-                <div class="title">Hello</div>
-                <div class="subtitle">This is sub</div>
+                <div class="title">April 2025</div>
+                <div class="subtitle">Monday 4 April 2025</div>
             </div>
             <div class="body" id="forecastLstContainer">
                 <!--<div class="forecastItem">
@@ -104,7 +121,7 @@
 
         let day = document.createElement("div");
         day.classList.add("day");
-        day.innerHTML = `${givenHour}:00`
+        day.innerHTML = `${givenHour.toString().padStart(2,"0")}:00`
         forecastItem.appendChild(day);
 
         let img = document.createElement("img");
@@ -112,8 +129,18 @@
         forecastItem.appendChild(img);
 
         let temp = document.createElement("div");
-        temp.classList.add("temperature");
-        temp.innerHTML = Math.round(Math.random(0,40)*10);
+        temp.classList.add("temperatureBlock");
+
+        let maxTemp = document.createElement("div");
+        maxTemp.classList.add("maxTemp");
+        maxTemp.innerHTML = Math.round(Math.random(0,40)*10);
+        temp.appendChild(maxTemp);
+
+        let minTemp = document.createElement("div");
+        minTemp.classList.add("minTemp");
+        minTemp.innerHTML =  Math.round(Math.random(0,40)*10);
+        temp.appendChild(minTemp);
+
         forecastItem.appendChild(temp);
         return forecastItem;
     }
@@ -124,8 +151,10 @@
 
     let forecastHoursContainer = document.getElementById("forecastHoursContainer");
     let items = [...Array(24).keys()];
-    items.forEach(x=>{
+    items.forEach((x,i)=>{
         let small = createForecastItemSmall(x);
+        if(i==9)
+            small.classList.add("active")
         forecastHoursContainer.appendChild(small);
     })
    </script>
