@@ -184,12 +184,12 @@
         justify-content: space-between;
         width: 100%;
         align-items: end;
-        color: var(--accent);
 
         &>.temperature
         {
             font-size: 3em;
             font-weight: 700;
+            color: var(--accent);
             &::after
             {
                 content: "°C";
