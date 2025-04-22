@@ -67,6 +67,7 @@ namespace ConsoleApp1
         public WeatherAPIForecastDaySingle day { get; set; }
         public WeatherAPIForecastDayAstro astro { get; set; }
         public WeatherAPICurrent[] hour { get; set; }
+        public bool selected { get; set; }
     }
     public class WeatherAPIForecast 
     {
