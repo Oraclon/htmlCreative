@@ -1,7 +1,7 @@
 @use "./elements";
 @keyframes infiniteScale{
     0%{ transform: scale(1); }
-    33% { transform: scale(1.2); }
+    33% { transform: scale(1.4); }
     100% { transform: scale(1); }
 }
 .weatherContainer
@@ -20,7 +20,7 @@
     {
         grid-column: 1;
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: min-content auto;
         grid-template-columns: repeat(1, 1fr);
         gap: var(--padGap);
     }
@@ -127,11 +127,37 @@
             margin-left: .1rem;
         }
     }
+    &>.temperatureBlock
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 35%;
+        font-size: .9em;
+        gap: var(--padGap);
+
+        &>.maxTemp
+        {}
+        &>.minTemp
+        {
+            opacity: .6;
+        }
+        &>.maxTemp,&>.minTemp
+        {
+            &::after
+            {
+                content: "°";
+                margin-left: .1rem;
+            }
+        }
+    }
 }
 .forecastItem.small
 {
     justify-content: space-around;
     align-items: center;
+    padding: .6rem;
+
     & > img
     {
         width: 40px; height: 40px;
@@ -177,7 +203,7 @@
     }
     &>img{
         align-self: center;
-        animation: infiniteScale 1.6s infinite;
+        animation: infiniteScale 8s infinite;
     }
     &>.temperatureAndStatus{
         display: flex;
@@ -202,10 +228,9 @@
         }
     }
 }
-.currentBlock.wind
+.currentBlock.extras
 {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
 
@@ -215,13 +240,14 @@
         flex-direction: column;
         gap: 1.6rem;
         align-items: center;
+        height: fit-content;
         
         &>.icon{ font-size: .8em; }
         &>.text{ font-size: 1.6em; font-weight: 700; color: var(--accent); }
     
-        &:nth-child(1){ grid-row: 1; grid-column: 1; }
+        /*&:nth-child(1){ grid-row: 1; grid-column: 1; }
         &:nth-child(2){ grid-row: 1; grid-column: 2; }
         &:nth-child(3){ grid-row: 2; grid-column: 1; }
-        &:nth-child(4){ grid-row: 2; grid-column: 2; }
+        &:nth-child(4){ grid-row: 2; grid-column: 2; }*/
     }
 }
