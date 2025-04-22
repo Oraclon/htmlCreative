@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="weatherContainer">
+    <div class="currentWeatherContainer">
+        <!--#region [Current Temperature]-->
+        <div class="currentBlock temperature">
+            <div class="locationAndRegion">
+                <div class="location">Attica</div>
+                <div class="region">Europe/Greece</div>
+            </div>
+            <img src="./imgs/113b.png" alt="">
+            <div class="temperatureAndStatus">
+                <div class="temperature">30</div>
+                <div class="status">Clear</div>
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region [Current Wind]-->
+        <div class="currentBlock wind">
+            <div class="block">
+                <div class="icon">Wind Speed</div>
+                <div class="text">v</div>
+            </div>
+            <div class="block">
+                <div class="icon">Degrees 30Deg</div>
+                <div class="text">v</div>
+            </div>
+            <div class="block">
+                <div class="icon">Direction</div>
+                <div class="text">NWN</div>
+            </div>
+            <div class="block">
+                <div class="icon">Humidity</div>
+                <div class="text">v</div>
+            </div>
+        </div>
+        <!--#endregion-->
+    </div>
+    <div class="forecastWeatherContainer">
+        <!--#region [Forecast Week]-->
+        <div class="containerBlock forecastLst">
+            <div class="head">
+                <div class="title">Hello</div>
+                <div class="subtitle">This is sub</div>
+            </div>
+            <div class="body" id="forecastLstContainer">
+                <!--<div class="forecastItem">
+                    <div class="hour">00:00</div>
+                    <img src="./imgs/113.png" alt="">
+                    <div class="temperature">20</div>
+                </div>-->
+            </div>
+        </div>
+        <!--#endregion-->
+        <!--#region [Forecast Hours]-->
+        <div class="containerBlock forecastHours">
+            <div class="head">
+                <div class="subtitle">Forecast Hours View</div>
+            </div>
+            <div class="body" id="forecastHoursContainer">
+                <!--<div class="forecastItem small">
+                    <div class="hour">00:00</div>
+                    <img src="./imgs/113.png" alt="">
+                    <div class="temperature">20</div>
+                </div>-->
+            </div>
+        </div>
+        <!--#endregion-->
+    </div>
+   </div> 
+   <script>
+    const createForecastItem = (givenDay, isactive = false)=>{
+        let forecastItem = document.createElement("div");
+        forecastItem.classList.add("forecastItem");
+        if(isactive)
+            forecastItem.classList.add("active");
+
+        let day = document.createElement("div");
+        day.classList.add("day");
+        day.innerHTML = givenDay.substring(0,3);
+        forecastItem.appendChild(day);
+
+        let img = document.createElement("img");
+        img.src = "./imgs/113.png";
+        forecastItem.appendChild(img);
+
+        let temp = document.createElement("div");
+        temp.classList.add("temperature");
+        temp.innerHTML = Math.round(Math.random(0,40)*10);
+        forecastItem.appendChild(temp);
+        return forecastItem;
+    }
+    const createForecastItemSmall = (givenHour)=>{
+        let forecastItem = document.createElement("div");
+        forecastItem.classList.add(...["forecastItem","small"]);
+
+        let day = document.createElement("div");
+        day.classList.add("day");
+        day.innerHTML = `${givenHour}:00`
+        forecastItem.appendChild(day);
+
+        let img = document.createElement("img");
+        img.src = "./imgs/113.png";
+        forecastItem.appendChild(img);
+
+        let temp = document.createElement("div");
+        temp.classList.add("temperature");
+        temp.innerHTML = Math.round(Math.random(0,40)*10);
+        forecastItem.appendChild(temp);
+        return forecastItem;
+    }
+    let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let forecastsContainer = document.getElementById("forecastLstContainer");
+    for(let x = 0; x < daysOfWeek.length; x++)
+        forecastsContainer.appendChild(createForecastItem(daysOfWeek[x], x==0));
+
+    let forecastHoursContainer = document.getElementById("forecastHoursContainer");
+    let items = [...Array(24).keys()];
+    items.forEach(x=>{
+        let small = createForecastItemSmall(x);
+        forecastHoursContainer.appendChild(small);
+    })
+   </script>
+</body>
+</html>
