@@ -1,0 +1,124 @@
+C# Controller (Backend):
+
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace YourNamespace.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProgressController : ControllerBase
+    {
+        // Simulate a long-running process and report progress
+        [HttpGet("start-process")]
+        public async Task<ActionResult> StartProcess()
+        {
+            // Simulate progress tracking
+            for (int i = 0; i <= 100; i++)
+            {
+                // Here you can simulate work, such as processing data
+                await Task.Delay(100);  // Simulating work by delaying for 100 ms
+
+                // Send the progress to the client (e.g., using SignalR or other real-time methods)
+                // You could use a database or a shared static value to store the progress
+                ProgressService.UpdateProgress(i);
+            }
+
+            return Ok("Process completed");
+        }
+
+        [HttpGet("get-progress")]
+        public ActionResult<int> GetProgress()
+        {
+            // Return current progress
+            return ProgressService.GetProgress();  // This will return the current progress.
+        }
+    }
+
+    public static class ProgressService
+    {
+        private static int _progress = 0;
+
+        public static int GetProgress() => _progress;
+
+        public static void UpdateProgress(int progress)
+        {
+            _progress = progress;
+        }
+    }
+}
+
+---
+
+Angular Component (Frontend):
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-progress',
+  templateUrl: './progress.component.html',
+  styleUrls: ['./progress.component.css']
+})
+export class ProgressComponent implements OnInit {
+  progress: number = 0;
+  isProcessing: boolean = false;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {}
+
+  startProcess(): void {
+    this.isProcessing = true;
+
+    // Start the process on the server
+    this.http.get('http://localhost:5000/api/progress/start-process').subscribe(
+      () => {
+        // Poll for progress every 1 second
+        timer(0, 1000)
+          .pipe(
+            switchMap(() => this.http.get<number>('http://localhost:5000/api/progress/get-progress'))
+          )
+          .subscribe(progress => {
+            this.progress = progress;
+            if (this.progress >= 100) {
+              this.isProcessing = false;
+            }
+          });
+      },
+      error => {
+        console.error('Error starting process:', error);
+      }
+    );
+  }
+}
+
+---
+
+Angular Template (HTML):
+
+<div class="progress-container">
+  <!-- Native HTML progress bar -->
+  <progress *ngIf="isProcessing" value="{{progress}}" max="100"></progress>
+  <button (click)="startProcess()" [disabled]="isProcessing">
+    Start Process
+  </button>
+</div>
+
+---
+
+Angular Component Styling (CSS):
+
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+progress {
+  width: 100%;
+  height: 30px;
+  margin
