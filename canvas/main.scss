@@ -113,7 +113,7 @@ button
             padding: var(--padGap);
             color: var(--color);
 
-            &> img{ grid-column: 1; }
+            &> img{ grid-column: 1; width: 28px; height: 28px; object-position: center; object-fit: contain;}
             &> .predictionAndConfidence { 
                 grid-column: 2; 
                 display: flex;
