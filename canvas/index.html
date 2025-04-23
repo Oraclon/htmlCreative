@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="field">
+        <div class="tools">
+            <div class="buttons">
+                <button onClick="undo_last()">Undo</button>
+                <button onClick="clearCanvas()">Clear</button>
+            </div>
+            <div class="colors">
+                <div onClick="change_color(this)" class="colorfield" style="background: red;"></div>
+                <div onClick="change_color(this)" class="colorfield" style="background: blue;"></div>
+                <div onClick="change_color(this)" class="colorfield" style="background: green;"></div>
+                <div onClick="change_color(this)" class="colorfield" style="background: orange;"></div>
+            </div>
+            <div class="rest-tools">
+                <input onInput="draw_color = this.value" type="color" class="color-picker">
+                <input onInput="draw_width = this.value" type="range" min="1" max="100" class="pen-range">
+            </div>
+        </div>
+        <div class="canvasContainer">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script src="./index2.js"></script>
+</body>
+</html>
