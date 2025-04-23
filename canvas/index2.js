@@ -96,3 +96,8 @@ function undo_last()
         context.putImageData(restore_array[index],0,0);
     }
 }
+function doSomething()
+{
+    const dataurl = canvas.toDataURL("img/png");
+    debugger
+}
