@@ -69,3 +69,58 @@ namespace CNN.LayerLIB
     }
 
 }
+/*
+Input Layer
+Input size: 28×28×1 (grayscale)
+
+2. Conv Layer 1
+Filters: 32 filters of 3×3
+
+Stride: 1
+
+Padding: 1
+
+Activation: ReLU
+
+Output: 28×28×32
+
+3. Max Pooling 1
+Pool size: 2×2
+
+Stride: 2
+
+Output: 14×14×32
+
+4. Conv Layer 2
+Filters: 64 filters of 3×3
+
+Stride: 1
+
+Padding: 1
+
+Activation: ReLU
+
+Output: 14×14×64
+
+5. Max Pooling 2
+Pool size: 2×2
+
+Stride: 2
+
+Output: 7×7×64
+
+6. Fully Connected Layer 1
+Units: 128
+
+Activation: ReLU
+
+7. Fully Connected Layer 2
+Units: 64
+
+Activation: ReLU
+
+8. Output Layer
+Units: 10 (for digits 0–9)
+
+Activation: Softmax
+*/
