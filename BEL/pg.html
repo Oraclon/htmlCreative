@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body
+        {
+            width: 100%; height: 100%;
+            margin: 0; padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            background: brown;
+        }
+        .container
+        {
+            position: relative; 
+
+            width: 100%; height: 100%;
+        }
+        .pg
+        {
+            position: absolute;
+            top: 0; left: 0;
+            width: 20%; height: 4px;
+            background: yellowgreen;
+            transition: .4s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container1">
+    </div>
+    <script>
+        class ProgressBar
+        {
+            constructor(spawnArea)
+            {
+                this.spawn = document.getElementById(spawnArea);
+                this.lastWidth = 0;
+                this.ProgressBar = this._createPG();
+                this.spawn.appendChild(this.ProgressBar);
+            }
+            _createPG()
+            {
+                let pg = document.createElement("div");
+                pg.classList.add("pg");
+                pg.style.background = "yellowgreen";
+                pg.style.width= `${this.lastWidth}%`;
+                pg.style.height="4px;"
+                return pg;
+            }
+            _setProgress()
+            {
+                this.ProgressBar.style.width = `${this.lastWidth}%`;
+            }
+            increaseProgress()
+            {
+                this._setProgress();
+            }
+        }
+        let pg = new ProgressBar("container1");
+        
+
+        for(let x = 0; x < 100; x++)
+        { 
+            setTimeout(() => {
+                pg.lastWidth = x+1;
+                pg.increaseProgress();
+            }, x * 100);
+        }
+    </script>
+</body>
+</html>
