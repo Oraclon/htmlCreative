@@ -1,0 +1,27 @@
+<div *ngIf="isLoading; else showData">
+  <p>Loading...</p>  <!-- Display while loading -->
+</div>
+
+<ng-template #showData>
+  <div *ngIf="data">
+    <h3>Data Fetched</h3>
+    <pre>{{ data | json }}</pre>  <!-- Display the fetched data -->
+  </div>
+</ng-template>
+
+
+
+
+
+
+/* Example CSS */
+p {
+  font-size: 18px;
+  color: blue;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+}
