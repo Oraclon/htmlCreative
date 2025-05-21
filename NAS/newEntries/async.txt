@@ -1,0 +1,55 @@
+<div *ngIf="isLoading; else showData">
+  <p>Loading...</p>  <!-- Display while loading -->
+</div>
+
+<ng-template #showData>
+  <div *ngIf="data">
+    <h3>Data Fetched</h3>
+    <pre>{{ data | json }}</pre>  <!-- Display the fetched data -->
+  </div>
+</ng-template>
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-data-fetch',
+  templateUrl: './data-fetch.component.html',
+  styleUrls: ['./data-fetch.component.css']
+})
+export class DataFetchComponent implements OnInit {
+
+  // Initialize variables
+  isLoading = true;   // Flag to control loading state
+  data: any = null;   // Variable to store the fetched data
+
+  // Inject HttpClient into the constructor
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    // Trigger HTTP request on component initialization
+    this.fetchData();
+  }
+
+  // Fetch data from the API
+  fetchData(): void {
+    this.http.get('/api/slow-endpoint').subscribe(
+      response => {
+        // When the data is received, assign it and set isLoading to false
+        this.data = response;
+        this.isLoading = false;
+      },
+      error => {
+        // Handle error (in case the request fails)
+        console.error('Error fetching data:', error);
+        this.isLoading = false;  // Stop loading even on error
+      }
+    );
+  }
+
+}
